@@ -1913,6 +1913,7 @@ export const INITIAL_CARDS: FlashcardData[] = [
     front_ko: "층",
     front_en: "Floor",
     romanization: "cheung",
+    hanja: "層",
     meta: {
       type: CardType.Noun,
       politeness: Politeness.None

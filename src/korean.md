@@ -158,7 +158,7 @@
 | Department Store  | 백화점   | baekhwajeom  | 百貨店   |
 | Taekwon-do        | 태권도   | taegwondo    | 跆拳道   |
 | Tennis Court      | 테니스장 | teniseujang  | Tennis場 |
-| Floor             | 층       | cheung       | -        |
+| Floor             | 층       | cheung       | 層       |
 
 ### Time and Days
 

@@ -2,44 +2,81 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Volume2,
-  Plus,
   HelpCircle,
-  ChevronRight,
   RotateCcw,
   Check,
   Zap,
+  Shuffle,
 } from "lucide-react";
-import {
-  FlashcardData,
-  StudyMode,
-  Rating,
-  CardType,
-  Politeness,
-} from "./types";
+import { FlashcardData, StudyMode, Rating, Politeness } from "./types";
 import { INITIAL_CARDS } from "./data";
 import { updateSRS, sortCardsByDue } from "./srs";
 
 const STORAGE_KEY = "hanja_zen_cards";
+const STORAGE_VERSION_KEY = "hanja_zen_cards_version";
+const CURRENT_STORAGE_VERSION = __APP_VERSION__;
+
+function mulberry32(seed: number) {
+  return function random() {
+    let t = (seed += 0x6d2b79f5);
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffleCards<T>(input: T[], seed: number): T[] {
+  const list = [...input];
+  const random = mulberry32(seed || 1);
+
+  for (let i = list.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(random() * (i + 1));
+    [list[i], list[j]] = [list[j], list[i]];
+  }
+
+  return list;
+}
+
+function normalizeAnswer(value: string): string {
+  return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
 
 export default function App() {
   const [cards, setCards] = useState<FlashcardData[]>([]);
   const [mode, setMode] = useState<StudyMode>("KO_TO_EN");
+  const [isShuffled, setIsShuffled] = useState(false);
+  const [shuffleSeed, setShuffleSeed] = useState(() => Date.now());
   const [isFlipped, setIsFlipped] = useState(false);
   const [showHint, setShowHint] = useState(false);
-  const [isAddingCard, setIsAddingCard] = useState(false);
-  const [newCard, setNewCard] = useState({ ko: "", en: "" });
+  const [typedAnswer, setTypedAnswer] = useState("");
+  const [answerFeedback, setAnswerFeedback] = useState<{
+    isCorrect: boolean;
+    expected: string;
+    submitted: string;
+  } | null>(null);
 
   // Load cards from local storage
   useEffect(() => {
+    const storedVersion = localStorage.getItem(STORAGE_VERSION_KEY);
+
+    if (storedVersion !== CURRENT_STORAGE_VERSION) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(STORAGE_VERSION_KEY, CURRENT_STORAGE_VERSION);
+      setCards(INITIAL_CARDS);
+      return;
+    }
+
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       try {
         setCards(JSON.parse(saved));
       } catch (e) {
         setCards(INITIAL_CARDS);
+        localStorage.setItem(STORAGE_VERSION_KEY, CURRENT_STORAGE_VERSION);
       }
     } else {
       setCards(INITIAL_CARDS);
+      localStorage.setItem(STORAGE_VERSION_KEY, CURRENT_STORAGE_VERSION);
     }
   }, []);
 
@@ -50,7 +87,11 @@ export default function App() {
     }
   }, [cards]);
 
-  const dueCards = useMemo(() => sortCardsByDue(cards), [cards]);
+  const dueCards = useMemo(() => {
+    const sorted = sortCardsByDue(cards);
+    if (!isShuffled) return sorted;
+    return shuffleCards(sorted, shuffleSeed);
+  }, [cards, isShuffled, shuffleSeed]);
   const currentCard = dueCards[0];
 
   const speak = useCallback((text: string) => {
@@ -68,6 +109,7 @@ export default function App() {
     const nextFlipped = !isFlipped;
     setIsFlipped(nextFlipped);
     if (nextFlipped) {
+      setAnswerFeedback(null);
       speak(currentCard.front_ko);
     }
   }, [isFlipped, currentCard, speak]);
@@ -85,44 +127,62 @@ export default function App() {
 
       setIsFlipped(false);
       setShowHint(false);
+      setTypedAnswer("");
+      setAnswerFeedback(null);
     },
     [currentCard],
   );
 
-  const handleAddCard = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newCard.ko || !newCard.en) return;
+  const isKoPrompt = useMemo(() => {
+    if (mode === "KO_TO_EN") return true;
+    if (mode === "EN_TO_KO") return false;
+    return Math.random() > 0.5; // For Mixed, this is a bit naive but works for display
+  }, [mode, currentCard?.id]);
 
-    const card: FlashcardData = {
-      id: crypto.randomUUID(),
-      category: "User Added",
-      front_ko: newCard.ko,
-      front_en: newCard.en,
-      romanization: "", // Could be generated via LLM or API
-      meta: {
-        type: CardType.Noun,
-        politeness: Politeness.None,
-      },
-      example: {
-        ko: "",
-        en: "",
-      },
-      interval: 0,
-      ease: 2.5,
-      dueDate: Date.now(),
-    };
+  const expectedAnswer = useMemo(
+    () =>
+      currentCard
+        ? isKoPrompt
+          ? currentCard.front_en
+          : currentCard.front_ko
+        : "",
+    [currentCard, isKoPrompt],
+  );
 
-    setCards((prev) => [card, ...prev]);
-    setNewCard({ ko: "", en: "" });
-    setIsAddingCard(false);
-  };
+  const handleSubmitTypedAnswer = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!currentCard) return;
+
+      const submitted = typedAnswer.trim();
+      if (!submitted) return;
+
+      const isCorrect =
+        normalizeAnswer(submitted) === normalizeAnswer(expectedAnswer);
+      setAnswerFeedback({
+        isCorrect,
+        expected: expectedAnswer,
+        submitted,
+      });
+      setShowHint(false);
+      setIsFlipped(true);
+      speak(currentCard.front_ko);
+    },
+    [currentCard, expectedAnswer, speak, typedAnswer],
+  );
 
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (isAddingCard) return;
+      const target = e.target as HTMLElement | null;
+      const isTypingInField =
+        !!target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable);
 
       if (e.code === "Space") {
+        if (isTypingInField) return;
         e.preventDefault();
         handleFlip();
       } else if (e.key === "1" && isFlipped) {
@@ -131,20 +191,17 @@ export default function App() {
         handleRate(Rating.Hard);
       } else if (e.key === "3" && isFlipped) {
         handleRate(Rating.Easy);
-      } else if (e.key.toLowerCase() === "n") {
-        setIsAddingCard(true);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleFlip, handleRate, isFlipped, isAddingCard]);
+  }, [handleFlip, handleRate, isFlipped]);
 
-  const isKoPrompt = useMemo(() => {
-    if (mode === "KO_TO_EN") return true;
-    if (mode === "EN_TO_KO") return false;
-    return Math.random() > 0.5; // For Mixed, this is a bit naive but works for display
-  }, [mode, currentCard?.id]);
+  useEffect(() => {
+    setTypedAnswer("");
+    setAnswerFeedback(null);
+  }, [currentCard?.id, isKoPrompt]);
 
   if (!currentCard) {
     return (
@@ -165,7 +222,7 @@ export default function App() {
   return (
     <div className="h-screen flex flex-col items-center justify-center p-6 select-none">
       {/* Mode Toggle */}
-      <div className="absolute top-8 flex gap-6 text-[11px] font-medium tracking-widest text-gray-500 uppercase">
+      <div className="absolute top-8 flex items-center gap-6 text-[11px] font-medium tracking-widest text-gray-500 uppercase">
         {(["KO_TO_EN", "EN_TO_KO", "MIXED"] as StudyMode[]).map((m) => (
           <button
             key={m}
@@ -175,6 +232,31 @@ export default function App() {
             {m.replace(/_/g, " ")}
           </button>
         ))}
+
+        <button
+          onClick={() => {
+            setIsShuffled(true);
+            setShuffleSeed(Date.now());
+          }}
+          title="Shuffle cards"
+          className={`ml-2 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 transition-all ${
+            isShuffled
+              ? "border-blue-200 bg-blue-50 text-blue-700"
+              : "border-gray-200 bg-white/70 text-gray-500 hover:text-gray-700"
+          }`}
+        >
+          <Shuffle size={12} className={isShuffled ? "animate-pulse" : ""} />
+          <span>{isShuffled ? "Reshuffle" : "Shuffle"}</span>
+        </button>
+
+        {isShuffled && (
+          <button
+            onClick={() => setIsShuffled(false)}
+            className="text-[10px] text-gray-500 hover:text-gray-700 transition-colors"
+          >
+            Due order
+          </button>
+        )}
       </div>
 
       {/* Main Stage */}
@@ -188,30 +270,53 @@ export default function App() {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             onClick={handleFlip}
             className={`
-              w-full h-full bg-white rounded-3xl card-shadow p-12 flex flex-col items-center justify-center cursor-pointer relative overflow-hidden
+              w-full h-full bg-white rounded-3xl card-shadow p-8 flex flex-col items-center justify-between cursor-pointer relative overflow-hidden
               ${!isFlipped ? (isKoPrompt ? "bg-blue-50/30" : "bg-green-50/30") : ""}
             `}
           >
-            {/* Hanja in corner */}
-            {isFlipped && currentCard.hanja && (
-              <div className="absolute top-8 right-8 font-serif text-2xl text-gray-400">
-                {currentCard.hanja}
+            <div className="flex items-center justify-between w-full mb-4">
+              {/* Category Tag */}
+              <div className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold">
+                {currentCard.category}
               </div>
-            )}
 
-            {/* Category Tag */}
-            <div className="absolute top-8 left-8 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold">
-              {currentCard.category}
+              {/* Hanja in corner */}
+              {isFlipped && currentCard.hanja && (
+                <div className="font-serif text-2xl text-gray-400">
+                  {currentCard.hanja}
+                </div>
+              )}
             </div>
 
             {/* Front Content */}
             {!isFlipped ? (
-              <div className="text-center space-y-8">
+              <div className="text-center space-y-8 w-full max-w-md">
                 <h1
                   className={`text-6xl font-bold tracking-tight ${isKoPrompt ? "font-sans" : "font-sans"}`}
                 >
                   {isKoPrompt ? currentCard.front_ko : currentCard.front_en}
                 </h1>
+
+                <form
+                  onSubmit={handleSubmitTypedAnswer}
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex items-center gap-2"
+                >
+                  <input
+                    value={typedAnswer}
+                    onChange={(e) => setTypedAnswer(e.target.value)}
+                    placeholder={
+                      isKoPrompt ? "Type English answer" : "Type Korean answer"
+                    }
+                    className="flex-1 h-11 px-4 rounded-xl border border-gray-200 bg-white/80 text-sm outline-none focus:border-blue-300"
+                  />
+                  <button
+                    type="submit"
+                    className="h-11 px-4 rounded-xl bg-gray-900 text-white text-xs uppercase tracking-widest font-semibold hover:bg-gray-800 transition-colors"
+                  >
+                    Check
+                  </button>
+                </form>
 
                 <div className="h-12 flex items-center justify-center">
                   {!showHint ? (
@@ -236,7 +341,7 @@ export default function App() {
               </div>
             ) : (
               /* Back Content */
-              <div className="text-center space-y-6 w-full animate-fade-in">
+              <div className="text-center space-y-2 w-full animate-fade-in">
                 <div className="space-y-2">
                   <h2 className="text-4xl font-bold text-gray-900">
                     {isKoPrompt ? currentCard.front_en : currentCard.front_ko}
@@ -256,6 +361,26 @@ export default function App() {
                     </span>
                   )}
                 </div>
+
+                {answerFeedback && (
+                  <div
+                    className={`mx-auto max-w-sm rounded-2xl border px-4 py-3 text-left ${
+                      answerFeedback.isCorrect
+                        ? "border-green-200 bg-green-50 text-green-800"
+                        : "border-red-200 bg-red-50 text-red-800"
+                    }`}
+                  >
+                    <p className="text-[11px] uppercase tracking-widest font-bold">
+                      {answerFeedback.isCorrect ? "Correct" : "Wrong"}
+                    </p>
+                    <p className="mt-1 text-sm">
+                      Your answer:{" "}
+                      <span className="font-semibold">
+                        {answerFeedback.submitted}
+                      </span>
+                    </p>
+                  </div>
+                )}
 
                 {currentCard.example.ko && (
                   <div className="pt-6 border-t border-gray-50 space-y-2">
@@ -287,99 +412,49 @@ export default function App() {
       <div className="mt-12 h-16 flex items-center justify-center">
         {!isFlipped ? (
           <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold">
-            Press Space to Flip
+            Click card, press Space, or type an answer + Enter
           </p>
         ) : (
-          <div className="flex gap-12 animate-fade-in">
-            <button
-              onClick={() => handleRate(Rating.Forgot)}
-              className="group flex flex-col items-center gap-2"
-            >
-              <div className="w-10 h-10 rounded-full border border-red-100 flex items-center justify-center text-red-400 group-hover:bg-red-50 group-hover:text-red-500 transition-all">
-                <RotateCcw size={18} />
-              </div>
-              <span className="text-[9px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-red-500">
-                Forgot (1)
-              </span>
-            </button>
-            <button
-              onClick={() => handleRate(Rating.Hard)}
-              className="group flex flex-col items-center gap-2"
-            >
-              <div className="w-10 h-10 rounded-full border border-yellow-100 flex items-center justify-center text-yellow-400 group-hover:bg-yellow-50 group-hover:text-yellow-500 transition-all">
-                <Zap size={18} />
-              </div>
-              <span className="text-[9px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-yellow-500">
-                Hard (2)
-              </span>
-            </button>
-            <button
-              onClick={() => handleRate(Rating.Easy)}
-              className="group flex flex-col items-center gap-2"
-            >
-              <div className="w-10 h-10 rounded-full border border-green-100 flex items-center justify-center text-green-400 group-hover:bg-green-50 group-hover:text-green-500 transition-all">
-                <Check size={18} />
-              </div>
-              <span className="text-[9px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-green-500">
-                Easy (3)
-              </span>
-            </button>
+          <div>
+            <div className="mb-4 text-center text-gray-500 text-[10px] uppercase tracking-widest font-bold">
+              How well did you recall?
+            </div>
+            <div className="flex gap-12 animate-fade-in">
+              <button
+                onClick={() => handleRate(Rating.Forgot)}
+                className="group flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-full border border-red-100 flex items-center justify-center text-red-400 group-hover:bg-red-50 group-hover:text-red-500 transition-all">
+                  <RotateCcw size={18} />
+                </div>
+                <span className="text-[9px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-red-500">
+                  Forgot (1)
+                </span>
+              </button>
+              <button
+                onClick={() => handleRate(Rating.Hard)}
+                className="group flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-full border border-yellow-100 flex items-center justify-center text-yellow-400 group-hover:bg-yellow-50 group-hover:text-yellow-500 transition-all">
+                  <Zap size={18} />
+                </div>
+                <span className="text-[9px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-yellow-500">
+                  Hard (2)
+                </span>
+              </button>
+              <button
+                onClick={() => handleRate(Rating.Easy)}
+                className="group flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-full border border-green-100 flex items-center justify-center text-green-400 group-hover:bg-green-50 group-hover:text-green-500 transition-all">
+                  <Check size={18} />
+                </div>
+                <span className="text-[9px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-green-500">
+                  Easy (3)
+                </span>
+              </button>
+            </div>
           </div>
-        )}
-      </div>
-
-      {/* Add Card Row */}
-      <div className="absolute bottom-8 w-full max-w-lg px-6">
-        {!isAddingCard ? (
-          <button
-            onClick={() => setIsAddingCard(true)}
-            className="w-full py-4 border-t border-gray-100 flex items-center justify-between text-gray-500 hover:text-gray-700 transition-colors group"
-          >
-            <span className="text-[10px] uppercase tracking-widest font-bold">
-              Add new word
-            </span>
-            <Plus
-              size={16}
-              className="group-hover:rotate-90 transition-transform"
-            />
-          </button>
-        ) : (
-          <form
-            onSubmit={handleAddCard}
-            className="w-full py-4 border-t border-gray-100 flex items-center gap-4 animate-fade-in"
-          >
-            <input
-              autoFocus
-              placeholder="Korean"
-              value={newCard.ko}
-              onChange={(e) =>
-                setNewCard((prev) => ({ ...prev, ko: e.target.value }))
-              }
-              className="flex-1 bg-transparent border-none outline-none text-sm font-medium placeholder:text-gray-400"
-            />
-            <ChevronRight size={14} className="text-gray-400" />
-            <input
-              placeholder="English"
-              value={newCard.en}
-              onChange={(e) =>
-                setNewCard((prev) => ({ ...prev, en: e.target.value }))
-              }
-              className="flex-1 bg-transparent border-none outline-none text-sm font-medium placeholder:text-gray-400"
-            />
-            <button
-              type="submit"
-              className="text-blue-600 text-[10px] font-bold uppercase tracking-widest"
-            >
-              Save
-            </button>
-            <button
-              type="button"
-              onClick={() => setIsAddingCard(false)}
-              className="text-gray-500 text-[10px] font-bold uppercase tracking-widest"
-            >
-              Cancel
-            </button>
-          </form>
         )}
       </div>
     </div>
