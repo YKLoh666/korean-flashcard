@@ -179,7 +179,7 @@ Korean Word, Korean Sentence, English Sentence
 있어요, 책이 있어요., There is a book.
 없어요, 돈이 없어요., I don't have money.
 얼마예요?, 이거 얼마예요?, How much is this?
-전화번호가 몇반이에요?, 전화번호가 몇반이에요?, What is your phone number?
+전화번호, 전화번호가 몇반이에요?, What is your phone number?
 약속, 약속이 있어요., I have an appointment.
 시간, 시간이 없어요., I don't have time.
 보통, 보통 아침에 일어나요., I usually wake up in the morning.
@@ -187,3 +187,28 @@ Korean Word, Korean Sentence, English Sentence
 아주, 아주 좋아요., It is very good.
 도, 저도 가요., I go too.
 저도, 저도 학생이에요., Me too I am a student.
+
+일월, 일월에 눈이 와요., It snows in January.
+이월, 이월에 춥습니다., It is cold in February.
+삼월, 삼월에 꽃이 피어요., Flowers bloom in March.
+사월, 사월에 비가 와요., It rains in April.
+오월, 오월에 날씨가 좋아요., The weather is good in May.
+유월, 유월에 학교에 가요., I go to school in June.
+칠월, 칠월에 여름 방학이에요., It is summer vacation in July.
+팔월, 팔월에 더워요., It is hot in August.
+구월, 구월에 가을이 와요., Autumn comes in September.
+시월, 시월에 단풍이 예뻐요., The autumn leaves are pretty in October.
+십일월, 십일월에 날씨가 추워요., The weather is cold in November.
+십이월, 십이월에 크리스마스가 있어요., There is Christmas in December.
+
+하나 (한), 사과 한 개 있어요., There is one apple.
+둘 (두), 학생이 두 명 있어요., There are two students.
+셋 (세), 책이 세 권 있어요., There are three books.
+넷 (네), 의자가 네 개 있어요., There are four chairs.
+다섯, 다섯 명이 와요., Five people come.
+여섯, 여섯 개가 있어요., There are six things.
+일곱, 일곱 시에 만나요., I meet at seven.
+여덟, 여덟 개가 있어요., There are eight items.
+아홉, 아홉 명이 있어요., There are nine people.
+열, 열 개가 있어요., There are ten things.
+스물, 스물 살이에요., I am twenty years old.

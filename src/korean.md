@@ -10,9 +10,11 @@
     - [Food and Drinks](#food-and-drinks)
     - [Places and Locations](#places-and-locations)
     - [Time and Days](#time-and-days)
-    - [Numbers](#numbers)
+    - [Korean Numbers](#korean-numbers)
+    - [Sino Numbers](#sino-numbers)
     - [Counters and Units](#counters-and-units)
     - [Questions and Useful Words](#questions-and-useful-words)
+    - [Month Names](#month-names)
   - [Grammar](#grammar)
     - [Subject Markers](#subject-markers)
     - [Object Markers](#object-markers)
@@ -189,24 +191,39 @@
 | Weekend          | 주말   | jumal        | 週末   |
 | Everyday         | 매일   | maeil        | 每日   |
 
-### Numbers
+### Korean Numbers
 
-| Number | Sino-Korean | Native Korean  |
-| ------ | ----------- | -------------- |
-| 1      | 일 (il)     | 하나 (hana)    |
-| 2      | 이 (i)      | 둘 (dul)       |
-| 3      | 삼 (sam)    | 셋 (set)       |
-| 4      | 사 (sa)     | 넷 (net)       |
-| 5      | 오 (o)      | 다섯 (daseot)  |
-| 6      | 육 (yuk)    | 여섯 (yeoseot) |
-| 7      | 칠 (chil)   | 일곱 (ilgop)   |
-| 8      | 팔 (pal)    | 여덟 (yeodeol) |
-| 9      | 구 (gu)     | 아홉 (ahop)    |
-| 10     | 십 (sip)    | 열 (yeol)      |
-| 20     | 이십 (isip) | 스물 (seumul)  |
-| 100    | 백 (baek)   | -              |
-| 1000   | 천 (cheon)  | -              |
-| 10000  | 만 (man)    | -              |
+| English | 한글      | Romanization | 한자 |
+| ------- | --------- | ------------ | ---- |
+| 1       | 하나 (한) | hana (han)   | -    |
+| 2       | 둘 (두)   | dul (du)     | -    |
+| 3       | 셋 (세)   | set (se)     | -    |
+| 4       | 넷 (네)   | net (ne)     | -    |
+| 5       | 다섯      | daseot       | -    |
+| 6       | 여섯      | yeoseot      | -    |
+| 7       | 일곱      | ilgop        | -    |
+| 8       | 여덟      | yeodeol      | -    |
+| 9       | 아홉      | ahop         | -    |
+| 10      | 열        | yeol         | -    |
+| 20      | 스물      | seumul       | -    |
+
+### Sino Numbers
+
+| English | 한글 | Romanization | 한자 |
+| ------- | ---- | ------------ | ---- |
+| 1       | 일   | il           | 一   |
+| 2       | 이   | i            | 二   |
+| 3       | 삼   | sam          | 三   |
+| 4       | 사   | sa           | 四   |
+| 5       | 오   | o            | 五   |
+| 6       | 육   | yuk          | 六   |
+| 7       | 칠   | chil         | 七   |
+| 8       | 팔   | pal          | 八   |
+| 9       | 구   | gu           | 九   |
+| 10      | 십   | sip          | 十   |
+| 100     | 백   | baek         | 百   |
+| 1,000   | 천   | cheon        | 千   |
+| 10,000  | 만   | man          | 萬   |
 
 ### Counters and Units
 
@@ -234,29 +251,46 @@
 
 ### Questions and Useful Words
 
-| English                    | 한글                   | Romanization                   | 한자 |
-| -------------------------- | ---------------------- | ------------------------------ | ---- |
-| Why                        | 왜                     | wae                            | -    |
-| When                       | 언제                   | eonje                          | -    |
-| Where                      | 어디                   | eodi                           | -    |
-| Which                      | 어느                   | eoneu                          | -    |
-| How                        | 어떻게                 | eotteohge                      | -    |
-| Who                        | 누구                   | nugu                           | -    |
-| What kind of               | 무슨                   | museun                         | -    |
-| What (Informal)            | 뭐                     | mwo                            | -    |
-| What (Formal)              | 무엇                   | mueot                          | -    |
-| How many                   | 몇                     | myeot                          | -    |
-| Have / Is there?           | 있어요                 | isseoyo                        | -    |
-| Don't have / Isn't there?  | 없어요                 | eopseoyo                       | -    |
-| How much is it?            | 얼마예요?              | eolmayeyo                      | -    |
-| What is your phone number? | 전화번호가 몇반이에요? | jeonhwabeonhoga myeot banieyo? | -    |
-| Promise                    | 약속                   | yaksok                         | 約束 |
-| Time                       | 시간                   | sigan                          | 時間 |
-| Usually                    | 보통                   | botong                         | 普通 |
-| In that case               | 그럼                   | geureom                        | -    |
-| Very                       | 아주                   | aju                            | -    |
-| Too/also                   | 도                     | do                             | -    |
-| Me too                     | 저도                   | jeodo                          | -    |
+| English                   | 한글      | Romanization  | 한자 |
+| ------------------------- | --------- | ------------- | ---- |
+| Why                       | 왜        | wae           | -    |
+| When                      | 언제      | eonje         | -    |
+| Where                     | 어디      | eodi          | -    |
+| Which                     | 어느      | eoneu         | -    |
+| How                       | 어떻게    | eotteohge     | -    |
+| Who                       | 누구      | nugu          | -    |
+| What kind of              | 무슨      | museun        | -    |
+| What (Informal)           | 뭐        | mwo           | -    |
+| What (Formal)             | 무엇      | mueot         | -    |
+| How many                  | 몇        | myeot         | -    |
+| Have / Is there?          | 있어요    | isseoyo       | -    |
+| Don't have / Isn't there? | 없어요    | eopseoyo      | -    |
+| How much is it?           | 얼마예요? | eolmayeyo     | -    |
+| Phone Number              | 전화번호  | jeonhwabeonho | -    |
+| Promise                   | 약속      | yaksok        | 約束 |
+| Time                      | 시간      | sigan         | 時間 |
+| Usually                   | 보통      | botong        | 普通 |
+| In that case              | 그럼      | geureom       | -    |
+| Very                      | 아주      | aju           | -    |
+| Too/also                  | 도        | do            | -    |
+| Me too                    | 저도      | jeodo         | -    |
+
+### Month Names
+
+| English   | 한글   | Romanization | 한자   |
+| --------- | ------ | ------------ | ------ |
+| January   | 일월   | ilwol        | 一月   |
+| February  | 이월   | iwol         | 二月   |
+| March     | 삼월   | samwol       | 三月   |
+| April     | 사월   | sawol        | 四月   |
+| May       | 오월   | owol         | 五月   |
+| June      | 유월   | yuwol        | 六月   |
+| July      | 칠월   | chilwol      | 七月   |
+| August    | 팔월   | palwol       | 八月   |
+| September | 구월   | guwol        | 九月   |
+| October   | 시월   | siwol        | 十月   |
+| November  | 십일월 | sipilwol     | 十一月 |
+| December  | 십이월 | sipiwol      | 十二月 |
 
 ## Grammar
 

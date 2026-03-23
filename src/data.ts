@@ -1,8 +1,9 @@
-import { FlashcardData, CardType, Politeness } from "./types";
+import { FlashcardData, CardType, Politeness } from './types';
 
 const now = Date.now();
 
 export const INITIAL_CARDS: FlashcardData[] = [
+
   {
     id: "basic-expressions-1",
     category: "Basic Expressions",
@@ -11,15 +12,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "annyeonghaseyo",
     meta: {
       type: CardType.Phrase,
-      politeness: Politeness.Polite,
+      politeness: Politeness.Polite
     },
     example: {
       ko: "안녕하세요 저는 학생입니다.",
-      en: "Hello I am a student.",
+      en: "Hello I am a student."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -30,15 +31,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "bangapseumnida",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "만나서 반갑습니다.",
-      en: "Nice to meet you.",
+      en: "Nice to meet you."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -49,15 +50,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "ne",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "네 저는 이해했어요.",
-      en: "Yes I understand.",
+      en: "Yes I understand."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -68,15 +69,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "aniyo",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "아니요 저는 몰라요.",
-      en: "No I don't know.",
+      en: "No I don't know."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -87,15 +88,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "gamsahamnida",
     meta: {
       type: CardType.Phrase,
-      politeness: Politeness.Formal,
+      politeness: Politeness.Formal
     },
     example: {
       ko: "도와주셔서 감사합니다.",
-      en: "Thank you for helping.",
+      en: "Thank you for helping."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -106,15 +107,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "gomawoyo",
     meta: {
       type: CardType.Phrase,
-      politeness: Politeness.Formal,
+      politeness: Politeness.Formal
     },
     example: {
       ko: "정말 고마워요 친구야.",
-      en: "Thank you my friend.",
+      en: "Thank you my friend."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -125,15 +126,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "mianhaeyo",
     meta: {
       type: CardType.Phrase,
-      politeness: Politeness.Polite,
+      politeness: Politeness.Polite
     },
     example: {
       ko: "늦어서 미안해요.",
-      en: "Sorry I am late.",
+      en: "Sorry I am late."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -144,15 +145,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "juseyo",
     meta: {
       type: CardType.Phrase,
-      politeness: Politeness.Polite,
+      politeness: Politeness.Polite
     },
     example: {
       ko: "물을 주세요.",
-      en: "Please give me water.",
+      en: "Please give me water."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -163,15 +164,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "jeoneun",
     meta: {
       type: CardType.Phrase,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저는 학생입니다.",
-      en: "I am a student.",
+      en: "I am a student."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -182,15 +183,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "je",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "제 이름은 민수입니다.",
-      en: "My name is Minsu.",
+      en: "My name is Minsu."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -202,15 +203,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "家族",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "제 가족은 네 명이에요.",
-      en: "My family has four people.",
+      en: "My family has four people."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -222,15 +223,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "父母님",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "부모님은 집에 계세요.",
-      en: "My parents are at home.",
+      en: "My parents are at home."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -242,15 +243,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "兄弟",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저는 형제가 있어요.",
-      en: "I have siblings.",
+      en: "I have siblings."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -261,15 +262,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "abeoji",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "아버지는 회사에 가세요.",
-      en: "My father goes to work.",
+      en: "My father goes to work."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -280,15 +281,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eomeoni",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "어머니는 요리를 하세요.",
-      en: "My mother cooks.",
+      en: "My mother cooks."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -299,15 +300,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "halabeoji",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "할아버지는 공원에 가세요.",
-      en: "My grandfather goes to the park.",
+      en: "My grandfather goes to the park."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -318,15 +319,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "halmeoni",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "할머니는 집에 계세요.",
-      en: "My grandmother stays at home.",
+      en: "My grandmother stays at home."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -338,15 +339,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "兄",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "형은 키가 커요.",
-      en: "My older brother is tall.",
+      en: "My older brother is tall."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -357,15 +358,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "nuna",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "누나는 친절해요.",
-      en: "My older sister is kind.",
+      en: "My older sister is kind."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -376,15 +377,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "oppa",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "오빠는 학생이에요.",
-      en: "My older brother is a student.",
+      en: "My older brother is a student."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -395,15 +396,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eonni",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "언니는 예뻐요.",
-      en: "My older sister is pretty.",
+      en: "My older sister is pretty."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -415,15 +416,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "同生",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "동생은 학교에 가요.",
-      en: "My younger sibling goes to school.",
+      en: "My younger sibling goes to school."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -435,15 +436,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "男同生",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "남동생은 축구를 해요.",
-      en: "My younger brother plays soccer.",
+      en: "My younger brother plays soccer."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -455,15 +456,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "女同生",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "여동생은 책을 읽어요.",
-      en: "My younger sister reads a book.",
+      en: "My younger sister reads a book."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -475,15 +476,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "男子",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "그 사람은 남자예요.",
-      en: "That person is a man.",
+      en: "That person is a man."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -495,15 +496,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "女子",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "그 사람은 여자예요.",
-      en: "That person is a woman.",
+      en: "That person is a woman."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -515,15 +516,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "人",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "사람이 많아요.",
-      en: "There are many people.",
+      en: "There are many people."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -535,15 +536,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "親友",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "친구를 만나요.",
-      en: "I meet a friend.",
+      en: "I meet a friend."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -554,15 +555,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "ireum",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "이름이 뭐예요?",
-      en: "What is your name?",
+      en: "What is your name?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -573,15 +574,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "nara",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저는 이 나라를 좋아해요.",
-      en: "I like this country.",
+      en: "I like this country."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -593,15 +594,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "韓国",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저는 한국에 가고 싶어요.",
-      en: "I want to go to Korea.",
+      en: "I want to go to Korea."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -613,15 +614,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "美國",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "미국은 멀어요.",
-      en: "America is far.",
+      en: "America is far."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -633,15 +634,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "日本",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "일본에 친구가 있어요.",
-      en: "I have a friend in Japan.",
+      en: "I have a friend in Japan."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -653,15 +654,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "中國",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "중국 음식은 맛있어요.",
-      en: "Chinese food is delicious.",
+      en: "Chinese food is delicious."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -672,15 +673,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "beteunam",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "베트남에 여행을 가요.",
-      en: "I travel to Vietnam.",
+      en: "I travel to Vietnam."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -692,15 +693,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "泰國",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "태국은 더워요.",
-      en: "Thailand is hot.",
+      en: "Thailand is hot."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -711,15 +712,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "malleisia",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저는 말레이시아에 살아요.",
-      en: "I live in Malaysia.",
+      en: "I live in Malaysia."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -730,15 +731,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "peurangseu",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "프랑스에 가고 싶어요.",
-      en: "I want to go to France.",
+      en: "I want to go to France."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -750,15 +751,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "德國",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "독일은 유명해요.",
-      en: "Germany is famous.",
+      en: "Germany is famous."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -769,15 +770,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "itallia",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "이탈리아 음식은 맛있어요.",
-      en: "Italian food is delicious.",
+      en: "Italian food is delicious."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -788,15 +789,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "seupein",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "스페인은 아름다워요.",
-      en: "Spain is beautiful.",
+      en: "Spain is beautiful."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -807,15 +808,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "kaenada",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "캐나다는 추워요.",
-      en: "Canada is cold.",
+      en: "Canada is cold."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -827,15 +828,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "澳洲",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "호주에 친구가 있어요.",
-      en: "I have a friend in Australia.",
+      en: "I have a friend in Australia."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -847,15 +848,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "印度",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "인도 음식은 매워요.",
-      en: "Indian food is spicy.",
+      en: "Indian food is spicy."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -867,15 +868,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "英國",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "영국은 비가 많이 와요.",
-      en: "England rains a lot.",
+      en: "England rains a lot."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -887,15 +888,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "職業",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "제 직업은 학생이에요.",
-      en: "My occupation is student.",
+      en: "My occupation is student."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -907,15 +908,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "先生님",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "선생님은 친절해요.",
-      en: "The teacher is kind.",
+      en: "The teacher is kind."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -927,15 +928,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "料理師",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "요리사는 음식을 만들어요.",
-      en: "The chef cooks food.",
+      en: "The chef cooks food."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -947,15 +948,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "醫師",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "의사는 병을 치료해요.",
-      en: "The doctor treats illness.",
+      en: "The doctor treats illness."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -967,15 +968,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "學生",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저는 학생이에요.",
-      en: "I am a student.",
+      en: "I am a student."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -987,15 +988,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "主婦",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "주부는 집에서 일해요.",
-      en: "The housewife works at home.",
+      en: "The housewife works at home."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1007,15 +1008,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "歌手",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "가수는 노래를 불러요.",
-      en: "The singer sings.",
+      en: "The singer sings."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1027,15 +1028,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "俳優",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "배우는 연기를 해요.",
-      en: "The actor acts.",
+      en: "The actor acts."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1047,15 +1048,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "警察官",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "경찰관은 사람을 도와요.",
-      en: "The police officer helps people.",
+      en: "The police officer helps people."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1067,15 +1068,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "會社員",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "회사원은 회사에서 일해요.",
-      en: "The office worker works at a company.",
+      en: "The office worker works at a company."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1087,15 +1088,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "會社",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "회사에 가요.",
-      en: "I go to the company.",
+      en: "I go to the company."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1107,15 +1108,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "學校",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "학교에 가요.",
-      en: "I go to school.",
+      en: "I go to school."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1127,15 +1128,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "教室",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "교실에서 공부해요.",
-      en: "I study in the classroom.",
+      en: "I study in the classroom."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1147,15 +1148,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "書店",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "서점에서 책을 사요.",
-      en: "I buy a book at the bookstore.",
+      en: "I buy a book at the bookstore."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1167,15 +1168,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "圖書館",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "도서관에서 공부해요.",
-      en: "I study at the library.",
+      en: "I study at the library."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1187,15 +1188,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "病院",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "병원에 가요.",
-      en: "I go to the hospital.",
+      en: "I go to the hospital."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1207,15 +1208,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "大使館",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "대사관에 가요.",
-      en: "I go to the embassy.",
+      en: "I go to the embassy."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1227,15 +1228,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "鞄",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "가방을 들어요.",
-      en: "I carry a bag.",
+      en: "I carry a bag."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1247,15 +1248,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "辭典",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "사전을 사용해요.",
-      en: "I use a dictionary.",
+      en: "I use a dictionary."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1267,15 +1268,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "電子辭典",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "전자사전을 사용해요.",
-      en: "I use a digital dictionary.",
+      en: "I use a digital dictionary."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1287,15 +1288,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "帽子",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "모자를 써요.",
-      en: "I wear a cap.",
+      en: "I wear a cap."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1306,15 +1307,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "haendeupon",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "핸드폰을 사용해요.",
-      en: "I use a phone.",
+      en: "I use a phone."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1326,15 +1327,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "時計",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "시계를 봐요.",
-      en: "I look at the watch.",
+      en: "I look at the watch."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1346,15 +1347,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "眼鏡",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "안경을 써요.",
-      en: "I wear glasses.",
+      en: "I wear glasses."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1366,15 +1367,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "鉛筆",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "연필로 써요.",
-      en: "I write with a pencil.",
+      en: "I write with a pencil."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1385,15 +1386,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "jiugae",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "지우개로 지워요.",
-      en: "I erase with an eraser.",
+      en: "I erase with an eraser."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1405,15 +1406,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "冊床",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "책상 위에 책이 있어요.",
-      en: "There is a book on the desk.",
+      en: "There is a book on the desk."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1425,15 +1426,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "椅子",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "의자에 앉아요.",
-      en: "I sit on a chair.",
+      en: "I sit on a chair."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1444,15 +1445,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "peurinteo",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "프린터를 사용해요.",
-      en: "I use a printer.",
+      en: "I use a printer."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1463,15 +1464,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "kamera",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "카메라로 사진을 찍어요.",
-      en: "I take photos with a camera.",
+      en: "I take photos with a camera."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1483,15 +1484,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "新聞",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "신문을 읽어요.",
-      en: "I read a newspaper.",
+      en: "I read a newspaper."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1502,15 +1503,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "bolpen",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "볼펜으로 써요.",
-      en: "I write with a pen.",
+      en: "I write with a pen."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1521,15 +1522,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "keompyuteo",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "컴퓨터를 사용해요.",
-      en: "I use a computer.",
+      en: "I use a computer."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1540,15 +1541,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "jongi",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "종이에 써요.",
-      en: "I write on paper.",
+      en: "I write on paper."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1560,15 +1561,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "飮食",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "음식을 먹어요.",
-      en: "I eat food.",
+      en: "I eat food."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1580,15 +1581,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "沙果",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "사과를 먹어요.",
-      en: "I eat an apple.",
+      en: "I eat an apple."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1600,15 +1601,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "Lemon茶",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "레몬차를 마셔요.",
-      en: "I drink lemon tea.",
+      en: "I drink lemon tea."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1619,15 +1620,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "orenji juseu",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "오렌지 주스를 마셔요.",
-      en: "I drink orange juice.",
+      en: "I drink orange juice."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1638,15 +1639,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "keopi",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "커피를 마셔요.",
-      en: "I drink coffee.",
+      en: "I drink coffee."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1657,15 +1658,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "saida",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "사이다를 마셔요.",
-      en: "I drink cider.",
+      en: "I drink cider."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1676,15 +1677,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "jip",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "집에 있어요.",
-      en: "I am at home.",
+      en: "I am at home."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1696,15 +1697,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "化粧室",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "화장실에 가요.",
-      en: "I go to the bathroom.",
+      en: "I go to the bathroom."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1716,15 +1717,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "銀行",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "은행에 가요.",
-      en: "I go to the bank.",
+      en: "I go to the bank."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1736,15 +1737,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "食堂",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "식당에서 먹어요.",
-      en: "I eat at a restaurant.",
+      en: "I eat at a restaurant."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1756,15 +1757,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "劇場",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "극장에서 영화를 봐요.",
-      en: "I watch a movie at the cinema.",
+      en: "I watch a movie at the cinema."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1776,15 +1777,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "水泳場",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "수영장에서 수영해요.",
-      en: "I swim at the pool.",
+      en: "I swim at the pool."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1796,15 +1797,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "體育館",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "체육관에서 운동해요.",
-      en: "I exercise at the gym.",
+      en: "I exercise at the gym."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1815,15 +1816,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "keopisyop",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "커피숍에서 커피를 마셔요.",
-      en: "I drink coffee at a cafe.",
+      en: "I drink coffee at a cafe."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1835,15 +1836,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "空港",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "공항에 가요.",
-      en: "I go to the airport.",
+      en: "I go to the airport."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1855,15 +1856,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "百貨店",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "백화점에서 쇼핑해요.",
-      en: "I shop at the department store.",
+      en: "I shop at the department store."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1875,15 +1876,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "跆拳道",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "태권도를 배워요.",
-      en: "I learn taekwondo.",
+      en: "I learn taekwondo."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1895,15 +1896,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "Tennis場",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "테니스장에서 운동해요.",
-      en: "I play at the tennis court.",
+      en: "I play at the tennis court."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1914,15 +1915,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "cheung",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "3층에 있어요.",
-      en: "It is on the third floor.",
+      en: "It is on the third floor."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1934,15 +1935,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "生日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "오늘은 제 생일이에요.",
-      en: "Today is my birthday.",
+      en: "Today is my birthday."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1954,15 +1955,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "이번 월은 바빠요.",
-      en: "This month is busy.",
+      en: "This month is busy."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1974,15 +1975,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "年",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "올해는 2024년이에요.",
-      en: "This year is 2024.",
+      en: "This year is 2024."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -1994,15 +1995,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "사과 한 개 있어요.",
-      en: "There is one apple.",
+      en: "There is one apple."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2014,15 +2015,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "午前",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "오전에 공부해요.",
-      en: "I study in the morning.",
+      en: "I study in the morning."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2034,15 +2035,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "午後",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "오후에 일해요.",
-      en: "I work in the afternoon.",
+      en: "I work in the afternoon."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2053,15 +2054,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "achim",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "아침에 밥을 먹어요.",
-      en: "I eat breakfast in the morning.",
+      en: "I eat breakfast in the morning."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2073,15 +2074,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "點心",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "점심에 친구를 만나요.",
-      en: "I meet a friend at lunch.",
+      en: "I meet a friend at lunch."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2092,15 +2093,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "jeonyeok",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저녁에 운동해요.",
-      en: "I exercise in the evening.",
+      en: "I exercise in the evening."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2112,15 +2113,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "晚",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "밤에 자요.",
-      en: "I sleep at night.",
+      en: "I sleep at night."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2132,15 +2133,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "時",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "지금 세 시예요.",
-      en: "It is three o'clock now.",
+      en: "It is three o'clock now."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2152,15 +2153,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "分",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "십 분 기다려요.",
-      en: "I wait ten minutes.",
+      en: "I wait ten minutes."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2172,15 +2173,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "秒",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "일 초 기다려요.",
-      en: "I wait one second.",
+      en: "I wait one second."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2191,15 +2192,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "oneul",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "오늘은 날씨가 좋아요.",
-      en: "The weather is good today.",
+      en: "The weather is good today."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2210,15 +2211,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eoje",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "어제는 바빴어요.",
-      en: "Yesterday was busy.",
+      en: "Yesterday was busy."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2230,15 +2231,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "来日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "내일 학교에 가요.",
-      en: "I go to school tomorrow.",
+      en: "I go to school tomorrow."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2250,15 +2251,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "月曜日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "월요일에 일해요.",
-      en: "I work on Monday.",
+      en: "I work on Monday."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2270,15 +2271,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "火曜日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "화요일에 공부해요.",
-      en: "I study on Tuesday.",
+      en: "I study on Tuesday."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2290,15 +2291,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "水曜日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "수요일에 만나요.",
-      en: "I meet on Wednesday.",
+      en: "I meet on Wednesday."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2310,15 +2311,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "木曜日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "목요일에 쉬어요.",
-      en: "I rest on Thursday.",
+      en: "I rest on Thursday."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2330,15 +2331,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "金曜日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "금요일에 영화 봐요.",
-      en: "I watch a movie on Friday.",
+      en: "I watch a movie on Friday."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2350,15 +2351,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "土曜日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "토요일에 여행 가요.",
-      en: "I travel on Saturday.",
+      en: "I travel on Saturday."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2370,15 +2371,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "日曜日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "일요일에 쉬어요.",
-      en: "I rest on Sunday.",
+      en: "I rest on Sunday."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2390,15 +2391,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "平日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "평일에는 바빠요.",
-      en: "I am busy on weekdays.",
+      en: "I am busy on weekdays."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2410,15 +2411,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "週末",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "주말에 쉬어요.",
-      en: "I rest on weekends.",
+      en: "I rest on weekends."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2430,281 +2431,484 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "每日",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "매일 공부해요.",
-      en: "I study every day.",
+      en: "I study every day."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-1",
-    category: "Numbers",
-    front_ko: "일 (il)",
+    id: "korean-numbers-1",
+    category: "Korean Numbers",
+    front_ko: "하나 (한)",
     front_en: "1",
-    romanization: "하나 (hana)",
+    romanization: "hana (han)",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "일 (il) 예문",
-      en: "Example with 1",
+      ko: "사과 한 개 있어요.",
+      en: "There is one apple."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-2",
-    category: "Numbers",
-    front_ko: "이 (i)",
+    id: "korean-numbers-2",
+    category: "Korean Numbers",
+    front_ko: "둘 (두)",
     front_en: "2",
-    romanization: "둘 (dul)",
+    romanization: "dul (du)",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "이 (i) 예문",
-      en: "Example with 2",
+      ko: "학생이 두 명 있어요.",
+      en: "There are two students."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-3",
-    category: "Numbers",
-    front_ko: "삼 (sam)",
+    id: "korean-numbers-3",
+    category: "Korean Numbers",
+    front_ko: "셋 (세)",
     front_en: "3",
-    romanization: "셋 (set)",
+    romanization: "set (se)",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "삼 (sam) 예문",
-      en: "Example with 3",
+      ko: "책이 세 권 있어요.",
+      en: "There are three books."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-4",
-    category: "Numbers",
-    front_ko: "사 (sa)",
+    id: "korean-numbers-4",
+    category: "Korean Numbers",
+    front_ko: "넷 (네)",
     front_en: "4",
-    romanization: "넷 (net)",
+    romanization: "net (ne)",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "사 (sa) 예문",
-      en: "Example with 4",
+      ko: "의자가 네 개 있어요.",
+      en: "There are four chairs."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-5",
-    category: "Numbers",
-    front_ko: "오 (o)",
+    id: "korean-numbers-5",
+    category: "Korean Numbers",
+    front_ko: "다섯",
     front_en: "5",
-    romanization: "다섯 (daseot)",
+    romanization: "daseot",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "오 (o) 예문",
-      en: "Example with 5",
+      ko: "다섯 명이 와요.",
+      en: "Five people come."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-6",
-    category: "Numbers",
-    front_ko: "육 (yuk)",
+    id: "korean-numbers-6",
+    category: "Korean Numbers",
+    front_ko: "여섯",
     front_en: "6",
-    romanization: "여섯 (yeoseot)",
+    romanization: "yeoseot",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "육 (yuk) 예문",
-      en: "Example with 6",
+      ko: "여섯 개가 있어요.",
+      en: "There are six things."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-7",
-    category: "Numbers",
-    front_ko: "칠 (chil)",
+    id: "korean-numbers-7",
+    category: "Korean Numbers",
+    front_ko: "일곱",
     front_en: "7",
-    romanization: "일곱 (ilgop)",
+    romanization: "ilgop",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "칠 (chil) 예문",
-      en: "Example with 7",
+      ko: "일곱 시에 만나요.",
+      en: "I meet at seven."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-8",
-    category: "Numbers",
-    front_ko: "팔 (pal)",
+    id: "korean-numbers-8",
+    category: "Korean Numbers",
+    front_ko: "여덟",
     front_en: "8",
-    romanization: "여덟 (yeodeol)",
+    romanization: "yeodeol",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "팔 (pal) 예문",
-      en: "Example with 8",
+      ko: "여덟 개가 있어요.",
+      en: "There are eight items."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-9",
-    category: "Numbers",
-    front_ko: "구 (gu)",
+    id: "korean-numbers-9",
+    category: "Korean Numbers",
+    front_ko: "아홉",
     front_en: "9",
-    romanization: "아홉 (ahop)",
+    romanization: "ahop",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "구 (gu) 예문",
-      en: "Example with 9",
+      ko: "아홉 명이 있어요.",
+      en: "There are nine people."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-10",
-    category: "Numbers",
-    front_ko: "십 (sip)",
+    id: "korean-numbers-10",
+    category: "Korean Numbers",
+    front_ko: "열",
     front_en: "10",
-    romanization: "열 (yeol)",
+    romanization: "yeol",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "십 (sip) 예문",
-      en: "Example with 10",
+      ko: "열 개가 있어요.",
+      en: "There are ten things."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-11",
-    category: "Numbers",
-    front_ko: "이십 (isip)",
+    id: "korean-numbers-11",
+    category: "Korean Numbers",
+    front_ko: "스물",
     front_en: "20",
-    romanization: "스물 (seumul)",
+    romanization: "seumul",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "이십 (isip) 예문",
-      en: "Example with 20",
+      ko: "스물 살이에요.",
+      en: "I am twenty years old."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-12",
-    category: "Numbers",
-    front_ko: "백 (baek)",
+    id: "sino-numbers-1",
+    category: "Sino Numbers",
+    front_ko: "일",
+    front_en: "1",
+    romanization: "il",
+    hanja: "一",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "사과 한 개 있어요.",
+      en: "There is one apple."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-2",
+    category: "Sino Numbers",
+    front_ko: "이",
+    front_en: "2",
+    romanization: "i",
+    hanja: "二",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "학생이 두 명 있어요.",
+      en: "There are two students."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-3",
+    category: "Sino Numbers",
+    front_ko: "삼",
+    front_en: "3",
+    romanization: "sam",
+    hanja: "三",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "책이 세 권 있어요.",
+      en: "There are three books."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-4",
+    category: "Sino Numbers",
+    front_ko: "사",
+    front_en: "4",
+    romanization: "sa",
+    hanja: "四",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "의자가 네 개 있어요.",
+      en: "There are four chairs."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-5",
+    category: "Sino Numbers",
+    front_ko: "오",
+    front_en: "5",
+    romanization: "o",
+    hanja: "五",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "다섯 명이 와요.",
+      en: "Five people come."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-6",
+    category: "Sino Numbers",
+    front_ko: "육",
+    front_en: "6",
+    romanization: "yuk",
+    hanja: "六",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "여섯 개가 있어요.",
+      en: "There are six things."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-7",
+    category: "Sino Numbers",
+    front_ko: "칠",
+    front_en: "7",
+    romanization: "chil",
+    hanja: "七",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "일곱 시에 만나요.",
+      en: "I meet at seven."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-8",
+    category: "Sino Numbers",
+    front_ko: "팔",
+    front_en: "8",
+    romanization: "pal",
+    hanja: "八",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "여덟 개가 있어요.",
+      en: "There are eight items."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-9",
+    category: "Sino Numbers",
+    front_ko: "구",
+    front_en: "9",
+    romanization: "gu",
+    hanja: "九",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "아홉 명이 있어요.",
+      en: "There are nine people."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-10",
+    category: "Sino Numbers",
+    front_ko: "십",
+    front_en: "10",
+    romanization: "sip",
+    hanja: "十",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "열 개가 있어요.",
+      en: "There are ten things."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "sino-numbers-11",
+    category: "Sino Numbers",
+    front_ko: "백",
     front_en: "100",
-    romanization: "-",
+    romanization: "baek",
+    hanja: "百",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "백 (baek) 예문",
-      en: "Example with 100",
+      ko: "백 원이에요.",
+      en: "It is one hundred won."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-13",
-    category: "Numbers",
-    front_ko: "천 (cheon)",
-    front_en: "1000",
-    romanization: "-",
+    id: "sino-numbers-12",
+    category: "Sino Numbers",
+    front_ko: "천",
+    front_en: "1,000",
+    romanization: "cheon",
+    hanja: "千",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "천 (cheon) 예문",
-      en: "Example with 1000",
+      ko: "천 원이에요.",
+      en: "It is one thousand won."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "numbers-14",
-    category: "Numbers",
-    front_ko: "만 (man)",
-    front_en: "10000",
-    romanization: "-",
+    id: "sino-numbers-13",
+    category: "Sino Numbers",
+    front_ko: "만",
+    front_en: "10,000",
+    romanization: "man",
+    hanja: "萬",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "만 (man) 예문",
-      en: "Example with 10000",
+      ko: "만 원이에요.",
+      en: "It is ten thousand won."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2716,15 +2920,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "物件",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "물건이 많아요.",
-      en: "There are many things.",
+      en: "There are many things."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2736,15 +2940,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "個",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "사과 두 개 있어요.",
-      en: "There are two apples.",
+      en: "There are two apples."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2756,15 +2960,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "名",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "학생 세 명 있어요.",
-      en: "There are three students.",
+      en: "There are three students."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2776,15 +2980,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "瓶",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "콜라 두 병 있어요.",
-      en: "There are two bottles of cola.",
+      en: "There are two bottles of cola."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2796,15 +3000,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "瓶",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "콜라 두 병 있어요.",
-      en: "There are two bottles of cola.",
+      en: "There are two bottles of cola."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2816,15 +3020,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "冊",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "책을 읽어요.",
-      en: "I read a book.",
+      en: "I read a book."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2836,15 +3040,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "卷",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "책 세 권 있어요.",
-      en: "There are three books.",
+      en: "There are three books."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2856,15 +3060,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "張",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "종이 한 장 있어요.",
-      en: "There is one sheet of paper.",
+      en: "There is one sheet of paper."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2876,15 +3080,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "動物",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "동물을 좋아해요.",
-      en: "I like animals.",
+      en: "I like animals."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2895,15 +3099,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "mari",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "개 두 마리 있어요.",
-      en: "There are two dogs.",
+      en: "There are two dogs."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2914,15 +3118,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "kkot",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "꽃이 예뻐요.",
-      en: "The flower is pretty.",
+      en: "The flower is pretty."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2933,15 +3137,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "songi",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "꽃 한 송이 있어요.",
-      en: "There is one flower.",
+      en: "There is one flower."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2952,15 +3156,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "ot",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "옷을 입어요.",
-      en: "I wear clothes.",
+      en: "I wear clothes."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2971,15 +3175,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "beol",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "옷 두 벌 있어요.",
-      en: "There are two sets of clothes.",
+      en: "There are two sets of clothes."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -2990,15 +3194,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "gudu",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "구두를 신어요.",
-      en: "I wear shoes.",
+      en: "I wear shoes."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3009,15 +3213,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "kyeolre",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "신발 한 켤레 있어요.",
-      en: "There is one pair of shoes.",
+      en: "There is one pair of shoes."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3029,15 +3233,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "台",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "컴퓨터 한 대 있어요.",
-      en: "There is one computer.",
+      en: "There is one computer."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3048,15 +3252,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "keop",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "컵이 있어요.",
-      en: "There is a cup.",
+      en: "There is a cup."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3068,15 +3272,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "盏",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "물 한 잔 주세요.",
-      en: "Please give me one cup of water.",
+      en: "Please give me one cup of water."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3087,15 +3291,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "wae",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "왜 늦었어요?",
-      en: "Why are you late?",
+      en: "Why are you late?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3106,15 +3310,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eonje",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "언제 만나요?",
-      en: "When do we meet?",
+      en: "When do we meet?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3125,15 +3329,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eodi",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "어디에 가요?",
-      en: "Where do you go?",
+      en: "Where do you go?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3144,15 +3348,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eoneu",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "어느 것을 좋아해요?",
-      en: "Which one do you like?",
+      en: "Which one do you like?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3163,15 +3367,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eotteohge",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "어떻게 가요?",
-      en: "How do you go?",
+      en: "How do you go?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3182,15 +3386,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "nugu",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "누구를 만나요?",
-      en: "Who do you meet?",
+      en: "Who do you meet?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3201,15 +3405,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "museun",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "무슨 음식을 좋아해요?",
-      en: "What kind of food do you like?",
+      en: "What kind of food do you like?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3220,15 +3424,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "mwo",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.Formal,
+      politeness: Politeness.Formal
     },
     example: {
       ko: "뭐 해요?",
-      en: "What are you doing?",
+      en: "What are you doing?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3239,15 +3443,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "mueot",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.Formal,
+      politeness: Politeness.Formal
     },
     example: {
       ko: "무엇을 원해요?",
-      en: "What do you want?",
+      en: "What do you want?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3258,15 +3462,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "myeot",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "몇 명이에요?",
-      en: "How many people?",
+      en: "How many people?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3277,15 +3481,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "isseoyo",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "책이 있어요.",
-      en: "There is a book.",
+      en: "There is a book."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3296,15 +3500,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eopseoyo",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "돈이 없어요.",
-      en: "I don't have money.",
+      en: "I don't have money."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3315,34 +3519,34 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "eolmayeyo",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "이거 얼마예요?",
-      en: "How much is this?",
+      en: "How much is this?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
     id: "questions-and-useful-words-14",
     category: "Questions and Useful Words",
-    front_ko: "전화번호가 몇반이에요?",
-    front_en: "What is your phone number?",
-    romanization: "jeonhwabeonhoga myeot banieyo?",
+    front_ko: "전화번호",
+    front_en: "Phone Number",
+    romanization: "jeonhwabeonho",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "전화번호가 몇반이에요?",
-      en: "What is your phone number?",
+      en: "What is your phone number?"
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3354,15 +3558,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "約束",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "약속이 있어요.",
-      en: "I have an appointment.",
+      en: "I have an appointment."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3374,15 +3578,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "時間",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "시간이 없어요.",
-      en: "I don't have time.",
+      en: "I don't have time."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3394,15 +3598,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     hanja: "普通",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "보통 아침에 일어나요.",
-      en: "I usually wake up in the morning.",
+      en: "I usually wake up in the morning."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3413,15 +3617,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "geureom",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "그럼 내일 봐요.",
-      en: "Then see you tomorrow.",
+      en: "Then see you tomorrow."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3432,15 +3636,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "aju",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "아주 좋아요.",
-      en: "It is very good.",
+      en: "It is very good."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3451,15 +3655,15 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "do",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저도 가요.",
-      en: "I go too.",
+      en: "I go too."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
@@ -3470,173 +3674,255 @@ export const INITIAL_CARDS: FlashcardData[] = [
     romanization: "jeodo",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
       ko: "저도 학생이에요.",
-      en: "Me too I am a student.",
+      en: "Me too I am a student."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "subject-markers-1",
-    category: "Subject Markers",
-    front_ko:
-      "Used when the subject ends with a consonant. Example: 책 + 이 = 책이",
-    front_en: "이 (i)",
-    romanization: "책이 있어요. (There is a book.)",
+    id: "month-names-1",
+    category: "Month Names",
+    front_ko: "일월",
+    front_en: "January",
+    romanization: "ilwol",
+    hanja: "一月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "Used when the subject ends with a consonant. Example: 책 + 이 = 책이 예문",
-      en: "Example with 이 (i)",
+      ko: "일월에 눈이 와요.",
+      en: "It snows in January."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "subject-markers-2",
-    category: "Subject Markers",
-    front_ko:
-      "Used when the subject ends with a vowel. Example: 사과 + 가 = 사과가",
-    front_en: "가 (ga)",
-    romanization: "사과가 있어요. (There is an apple.)",
+    id: "month-names-2",
+    category: "Month Names",
+    front_ko: "이월",
+    front_en: "February",
+    romanization: "iwol",
+    hanja: "二月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "Used when the subject ends with a vowel. Example: 사과 + 가 = 사과가 예문",
-      en: "Example with 가 (ga)",
+      ko: "이월에 춥습니다.",
+      en: "It is cold in February."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "object-markers-1",
-    category: "Object Markers",
-    front_ko:
-      "Used when the object ends with a consonant. Example: 책 + 을 = 책을",
-    front_en: "을 (eul)",
-    romanization: "책을 읽어요. (I read a book.)",
+    id: "month-names-3",
+    category: "Month Names",
+    front_ko: "삼월",
+    front_en: "March",
+    romanization: "samwol",
+    hanja: "三月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "Used when the object ends with a consonant. Example: 책 + 을 = 책을 예문",
-      en: "Example with 을 (eul)",
+      ko: "삼월에 꽃이 피어요.",
+      en: "Flowers bloom in March."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "object-markers-2",
-    category: "Object Markers",
-    front_ko:
-      "Used when the object ends with a vowel. Example: 사과 + 를 = 사과를",
-    front_en: "를 (reul)",
-    romanization: "사과를 먹어요. (I eat an apple.)",
+    id: "month-names-4",
+    category: "Month Names",
+    front_ko: "사월",
+    front_en: "April",
+    romanization: "sawol",
+    hanja: "四月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "Used when the object ends with a vowel. Example: 사과 + 를 = 사과를 예문",
-      en: "Example with 를 (reul)",
+      ko: "사월에 비가 와요.",
+      en: "It rains in April."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "topic-markers-1",
-    category: "Topic Markers",
-    front_ko:
-      "Used when the topic ends with a consonant. Example: 책 + 은 = 책은",
-    front_en: "은 (eun)",
-    romanization: "책은 재미있어요. (As for the book, it's interesting.)",
+    id: "month-names-5",
+    category: "Month Names",
+    front_ko: "오월",
+    front_en: "May",
+    romanization: "owol",
+    hanja: "五月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "Used when the topic ends with a consonant. Example: 책 + 은 = 책은 예문",
-      en: "Example with 은 (eun)",
+      ko: "오월에 날씨가 좋아요.",
+      en: "The weather is good in May."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "topic-markers-2",
-    category: "Topic Markers",
-    front_ko:
-      "Used when the topic ends with a vowel. Example: 사과 + 는 = 사과는",
-    front_en: "는 (neun)",
-    romanization: "사과는 맛있어요. (As for the apple, it's delicious.)",
+    id: "month-names-6",
+    category: "Month Names",
+    front_ko: "유월",
+    front_en: "June",
+    romanization: "yuwol",
+    hanja: "六月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "Used when the topic ends with a vowel. Example: 사과 + 는 = 사과는 예문",
-      en: "Example with 는 (neun)",
+      ko: "유월에 학교에 가요.",
+      en: "I go to school in June."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "location-markers-1",
-    category: "Location Markers",
-    front_ko:
-      "Used for a specific location or point in time. Often with 있어요 and 없어요.",
-    front_en: "에 (e)",
-    romanization: "집에 있어요. (I am at home.)",
+    id: "month-names-7",
+    category: "Month Names",
+    front_ko: "칠월",
+    front_en: "July",
+    romanization: "chilwol",
+    hanja: "七月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "Used for a specific location or point in time. Often with 있어요 and 없어요. 예문",
-      en: "Example with 에 (e)",
+      ko: "칠월에 여름 방학이에요.",
+      en: "It is summer vacation in July."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
 
   {
-    id: "location-markers-2",
-    category: "Location Markers",
-    front_ko: "Used for the location where an action takes place.",
-    front_en: "에서 (eseo)",
-    romanization: "학교에서 과학을 공부해요. (I study science at school.)",
+    id: "month-names-8",
+    category: "Month Names",
+    front_ko: "팔월",
+    front_en: "August",
+    romanization: "palwol",
+    hanja: "八月",
     meta: {
       type: CardType.Noun,
-      politeness: Politeness.None,
+      politeness: Politeness.None
     },
     example: {
-      ko: "Used for the location where an action takes place. 예문",
-      en: "Example with 에서 (eseo)",
+      ko: "팔월에 더워요.",
+      en: "It is hot in August."
     },
     interval: 0,
     ease: 2.5,
-    dueDate: now,
+    dueDate: now
   },
+
+  {
+    id: "month-names-9",
+    category: "Month Names",
+    front_ko: "구월",
+    front_en: "September",
+    romanization: "guwol",
+    hanja: "九月",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "구월에 가을이 와요.",
+      en: "Autumn comes in September."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "month-names-10",
+    category: "Month Names",
+    front_ko: "시월",
+    front_en: "October",
+    romanization: "siwol",
+    hanja: "十月",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "시월에 단풍이 예뻐요.",
+      en: "The autumn leaves are pretty in October."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "month-names-11",
+    category: "Month Names",
+    front_ko: "십일월",
+    front_en: "November",
+    romanization: "sipilwol",
+    hanja: "十一月",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "십일월에 날씨가 추워요.",
+      en: "The weather is cold in November."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "month-names-12",
+    category: "Month Names",
+    front_ko: "십이월",
+    front_en: "December",
+    romanization: "sipiwol",
+    hanja: "十二月",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "십이월에 크리스마스가 있어요.",
+      en: "There is Christmas in December."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
 ];
