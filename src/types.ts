@@ -1,16 +1,16 @@
 export enum CardType {
-  Noun = 'Noun',
-  Verb = 'Verb',
-  Adjective = 'Adjective',
-  Marker = 'Marker',
-  Phrase = 'Phrase'
+  Noun = "Noun",
+  Verb = "Verb",
+  Adjective = "Adjective",
+  Marker = "Marker",
+  Phrase = "Phrase",
 }
 
 export enum Politeness {
-  Formal = 'Formal',
-  Polite = 'Polite',
-  Informal = 'Informal',
-  None = 'None'
+  Formal = "Formal",
+  Polite = "Polite",
+  Informal = "Informal",
+  None = "None",
 }
 
 export interface CardExample {
@@ -40,10 +40,10 @@ export interface FlashcardData {
   lastReviewed?: number; // timestamp
 }
 
-export type StudyMode = 'KO_TO_EN' | 'EN_TO_KO' | 'MIXED';
+export type StudyMode = "KO_TO_EN" | "EN_TO_KO" | "MIXED" | "LISTENING";
 
 export enum Rating {
   Forgot = 1,
   Hard = 2,
-  Easy = 3
+  Easy = 3,
 }

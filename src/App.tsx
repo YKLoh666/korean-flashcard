@@ -46,7 +46,9 @@ function normalizeAnswer(value: string): string {
 export default function App() {
   const [cards, setCards] = useState<FlashcardData[]>([]);
   const [mode, setMode] = useState<StudyMode>("KO_TO_EN");
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(["All"]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([
+    "All",
+  ]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isShuffled, setIsShuffled] = useState(false);
   const [shuffleSeed, setShuffleSeed] = useState(() => Date.now());
@@ -98,7 +100,10 @@ export default function App() {
   }, [cards, isShuffled, shuffleSeed]);
 
   const categories = useMemo(
-    () => ["All", ...Array.from(new Set(cards.map((card) => card.category))).sort()],
+    () => [
+      "All",
+      ...Array.from(new Set(cards.map((card) => card.category))).sort(),
+    ],
     [cards],
   );
 
@@ -112,10 +117,13 @@ export default function App() {
 
   const filteredDueCards = useMemo(() => {
     if (selectedCategories.includes("All")) return dueCards;
-    return dueCards.filter((card) => selectedCategories.includes(card.category));
+    return dueCards.filter((card) =>
+      selectedCategories.includes(card.category),
+    );
   }, [dueCards, selectedCategories]);
 
   const currentCard = filteredDueCards[0];
+  const isListeningMode = mode === "LISTENING";
 
   const speak = useCallback((text: string) => {
     if ("speechSynthesis" in window) {
@@ -135,6 +143,7 @@ export default function App() {
       setAnswerFeedback(null);
       speak(currentCard.front_ko);
     }
+    setShowHint(false);
   }, [isFlipped, currentCard, speak]);
 
   const handleRate = useCallback(
@@ -157,6 +166,7 @@ export default function App() {
   );
 
   const isKoPrompt = useMemo(() => {
+    if (mode === "LISTENING") return true;
     if (mode === "KO_TO_EN") return true;
     if (mode === "EN_TO_KO") return false;
     return Math.random() > 0.5; // For Mixed, this is a bit naive but works for display
@@ -165,11 +175,13 @@ export default function App() {
   const expectedAnswer = useMemo(
     () =>
       currentCard
-        ? isKoPrompt
-          ? currentCard.front_en
-          : currentCard.front_ko
+        ? isListeningMode
+          ? currentCard.front_ko
+          : isKoPrompt
+            ? currentCard.front_en
+            : currentCard.front_ko
         : "",
-    [currentCard, isKoPrompt],
+    [currentCard, isKoPrompt, isListeningMode],
   );
 
   const handleSubmitTypedAnswer = useCallback(
@@ -207,7 +219,11 @@ export default function App() {
       if (e.code === "Space") {
         if (isTypingInField) return;
         e.preventDefault();
-        handleFlip();
+        if (isListeningMode && currentCard && !isFlipped) {
+          speak(currentCard.front_ko);
+        } else {
+          handleFlip();
+        }
       } else if (e.key === "1" && isFlipped) {
         handleRate(Rating.Forgot);
       } else if (e.key === "2" && isFlipped) {
@@ -219,7 +235,15 @@ export default function App() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleFlip, handleRate, isFlipped]);
+  }, [currentCard, handleFlip, handleRate, isFlipped, isListeningMode, speak]);
+
+  useEffect(() => {
+    if (!currentCard || !isListeningMode || isFlipped) return;
+    const timer = window.setTimeout(() => {
+      speak(currentCard.front_ko);
+    }, 120);
+    return () => window.clearTimeout(timer);
+  }, [currentCard, isFlipped, isListeningMode, speak]);
 
   useEffect(() => {
     setTypedAnswer("");
@@ -259,7 +283,9 @@ export default function App() {
     return (
       <div className="h-screen flex items-center justify-center bg-[#F8F9FA]">
         <div className="text-center">
-          <h2 className="text-2xl font-light text-gray-600">Loading cards...</h2>
+          <h2 className="text-2xl font-light text-gray-600">
+            Loading cards...
+          </h2>
         </div>
       </div>
     );
@@ -305,7 +331,9 @@ export default function App() {
           {categories.map((category) => {
             const isActive = selectedCategories.includes(category);
             const count =
-              category === "All" ? cards.length : (categoryCounts.get(category) ?? 0);
+              category === "All"
+                ? cards.length
+                : (categoryCounts.get(category) ?? 0);
 
             return (
               <button
@@ -337,7 +365,7 @@ export default function App() {
         </div>
       </aside>
 
-      <div className="relative flex-1 flex flex-col items-center justify-center p-4 md:p-6">
+      <div className="w-full relative flex-1 flex flex-col items-center justify-center p-4 md:p-6">
         <button
           onClick={() => setIsSidebarOpen(true)}
           className="absolute left-4 top-4 z-10 rounded-full border border-gray-200 bg-white p-2 text-gray-600 shadow-sm md:hidden"
@@ -347,15 +375,17 @@ export default function App() {
         </button>
 
         <div className="absolute top-5 left-1/2 -translate-x-1/2 flex flex-wrap justify-center items-center gap-3 text-[8px] font-medium tracking-widest text-gray-500 uppercase md:top-8 md:text-[11px]">
-          {(["KO_TO_EN", "EN_TO_KO", "MIXED"] as StudyMode[]).map((m) => (
-            <button
-              key={m}
-              onClick={() => setMode(m)}
-              className={`transition-colors hover:text-gray-800 ${mode === m ? "text-gray-900 border-b border-gray-900" : ""}`}
-            >
-              {m.replace(/_/g, " ")}
-            </button>
-          ))}
+          {(["KO_TO_EN", "EN_TO_KO", "MIXED", "LISTENING"] as StudyMode[]).map(
+            (m) => (
+              <button
+                key={m}
+                onClick={() => setMode(m)}
+                className={`transition-colors hover:text-gray-800 ${mode === m ? "text-gray-900 border-b border-gray-900" : ""}`}
+              >
+                {m.replace(/_/g, " ")}
+              </button>
+            ),
+          )}
 
           <button
             onClick={() => {
@@ -412,9 +442,32 @@ export default function App() {
 
                 {!isFlipped ? (
                   <div className="text-center space-y-8 w-full max-w-md">
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight font-sans">
-                      {isKoPrompt ? currentCard.front_ko : currentCard.front_en}
-                    </h1>
+                    {isListeningMode ? (
+                      <div className="space-y-3">
+                        <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
+                          Korean Listening
+                        </h1>
+                        <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
+                          Listen and type Korean
+                        </p>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            speak(currentCard.front_ko);
+                          }}
+                          className="mx-auto inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-blue-700 hover:bg-blue-100 transition-colors"
+                        >
+                          <Volume2 size={14} /> Play Korean
+                        </button>
+                      </div>
+                    ) : (
+                      <h1 className="text-4xl md:text-6xl font-bold tracking-tight font-sans">
+                        {isKoPrompt
+                          ? currentCard.front_ko
+                          : currentCard.front_en}
+                      </h1>
+                    )}
 
                     <form
                       onSubmit={handleSubmitTypedAnswer}
@@ -425,10 +478,16 @@ export default function App() {
                         value={typedAnswer}
                         onChange={(e) => setTypedAnswer(e.target.value)}
                         placeholder={
-                          isKoPrompt ? "Type English answer" : "Type Korean answer"
+                          isListeningMode
+                            ? "Type Korean answer"
+                            : isKoPrompt
+                              ? "Type English answer"
+                              : "Type Korean answer"
                         }
                         name="typedAnswer"
                         className="h-11 px-4 rounded-xl border border-gray-200 bg-white/80 text-sm outline-none focus:border-blue-300 flex-3"
+                        autoComplete="off"
+                        autoCorrect="off"
                       />
                       <button
                         type="submit"
@@ -451,10 +510,12 @@ export default function App() {
                         </button>
                       ) : (
                         <p className="text-sm text-gray-600 italic animate-fade-in">
-                          {currentCard.example.ko.replace(
-                            currentCard.front_ko,
-                            "[ ___ ]",
-                          )}
+                          {isListeningMode
+                            ? `Romanization: ${currentCard.romanization}`
+                            : currentCard.example.ko.replace(
+                                currentCard.front_ko,
+                                "[ ___ ]",
+                              )}
                         </p>
                       )}
                     </div>
@@ -462,9 +523,22 @@ export default function App() {
                 ) : (
                   <div className="text-center space-y-2 w-full animate-fade-in">
                     <div className="space-y-2">
-                      <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                        {isKoPrompt ? currentCard.front_en : currentCard.front_ko}
-                      </h2>
+                      {isListeningMode ? (
+                        <>
+                          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                            {currentCard.front_ko}
+                          </h2>
+                          <p className="text-base md:text-lg text-gray-600 font-medium">
+                            {currentCard.front_en}
+                          </p>
+                        </>
+                      ) : (
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                          {isKoPrompt
+                            ? currentCard.front_en
+                            : currentCard.front_ko}
+                        </h2>
+                      )}
                       <p className="text-sm font-mono text-gray-600 tracking-wider">
                         {currentCard.romanization}
                       </p>
@@ -503,7 +577,9 @@ export default function App() {
 
                     {currentCard.example.ko && (
                       <div className="pt-6 border-t border-gray-50 space-y-2">
-                        <p className="text-sm text-gray-700">{currentCard.example.ko}</p>
+                        <p className="text-sm text-gray-700">
+                          {currentCard.example.ko}
+                        </p>
                         <p className="text-xs text-gray-500 italic">
                           {currentCard.example.en}
                         </p>
