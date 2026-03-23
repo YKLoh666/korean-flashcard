@@ -222,7 +222,7 @@ export default function App() {
   return (
     <div className="h-screen flex flex-col items-center justify-center p-6 select-none">
       {/* Mode Toggle */}
-      <div className="absolute top-8 flex items-center gap-6 text-[11px] font-medium tracking-widest text-gray-500 uppercase">
+      <div className="absolute top-8 flex items-center gap-4 text-[8px] font-medium tracking-widest text-gray-500 uppercase md:text-[11px]">
         {(["KO_TO_EN", "EN_TO_KO", "MIXED"] as StudyMode[]).map((m) => (
           <button
             key={m}
@@ -300,7 +300,7 @@ export default function App() {
                 <form
                   onSubmit={handleSubmitTypedAnswer}
                   onClick={(e) => e.stopPropagation()}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 justify-center w-full"
                 >
                   <input
                     value={typedAnswer}
@@ -308,11 +308,12 @@ export default function App() {
                     placeholder={
                       isKoPrompt ? "Type English answer" : "Type Korean answer"
                     }
-                    className="flex-1 h-11 px-4 rounded-xl border border-gray-200 bg-white/80 text-sm outline-none focus:border-blue-300"
+                    name="typedAnswer"
+                    className="h-11 px-4 rounded-xl border border-gray-200 bg-white/80 text-sm outline-none focus:border-blue-300 flex-3"
                   />
                   <button
                     type="submit"
-                    className="h-11 px-4 rounded-xl bg-gray-900 text-white text-xs uppercase tracking-widest font-semibold hover:bg-gray-800 transition-colors"
+                    className="h-11 px-4 rounded-xl bg-gray-900 text-white text-xs uppercase tracking-widest font-semibold hover:bg-gray-800 transition-colors shrink-0 flex-1"
                   >
                     Check
                   </button>
