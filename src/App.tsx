@@ -6,9 +6,9 @@ import {
   RotateCcw,
   Check,
   Zap,
-  Shuffle,
   Menu,
   X,
+  Shuffle,
 } from "lucide-react";
 import { FlashcardData, StudyMode, Rating, Politeness } from "./types";
 import { INITIAL_CARDS } from "./data";
@@ -18,25 +18,23 @@ const STORAGE_KEY = "hanja_zen_cards";
 const STORAGE_VERSION_KEY = "hanja_zen_cards_version";
 const CURRENT_STORAGE_VERSION = __APP_VERSION__;
 
-function mulberry32(seed: number) {
-  return function random() {
-    let t = (seed += 0x6d2b79f5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+function createSeededRandom(seed: number) {
+  let t = seed;
+  return () => {
+    t += 0x6d2b79f5;
+    let r = Math.imul(t ^ (t >>> 15), t | 1);
+    r ^= r + Math.imul(r ^ (r >>> 7), r | 61);
+    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
   };
 }
 
-function shuffleCards<T>(input: T[], seed: number): T[] {
-  const list = [...input];
-  const random = mulberry32(seed || 1);
+function shuffleCards<T>(array: T[], seed: number): T[] {
+  const random = createSeededRandom(seed);
 
-  for (let i = list.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(random() * (i + 1));
-    [list[i], list[j]] = [list[j], list[i]];
-  }
-
-  return list;
+  return [...array]
+    .map((item) => ({ item, sortKey: random() }))
+    .sort((a, b) => a.sortKey - b.sortKey)
+    .map(({ item }) => item);
 }
 
 function normalizeAnswer(value: string): string {
@@ -50,8 +48,6 @@ export default function App() {
     "All",
   ]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isShuffled, setIsShuffled] = useState(false);
-  const [shuffleSeed, setShuffleSeed] = useState(() => Date.now());
   const [isFlipped, setIsFlipped] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [typedAnswer, setTypedAnswer] = useState("");
@@ -60,6 +56,8 @@ export default function App() {
     expected: string;
     submitted: string;
   } | null>(null);
+  const [shuffleEnabled, setShuffleEnabled] = useState(false);
+  const [shuffledCardIds, setShuffledCardIds] = useState<string[]>([]);
 
   // Load cards from local storage
   useEffect(() => {
@@ -94,10 +92,8 @@ export default function App() {
   }, [cards]);
 
   const dueCards = useMemo(() => {
-    const sorted = sortCardsByDue(cards);
-    if (!isShuffled) return sorted;
-    return shuffleCards(sorted, shuffleSeed);
-  }, [cards, isShuffled, shuffleSeed]);
+    return sortCardsByDue(cards);
+  }, [cards]);
 
   const categories = useMemo(
     () => [
@@ -122,7 +118,49 @@ export default function App() {
     );
   }, [dueCards, selectedCategories]);
 
-  const currentCard = filteredDueCards[0];
+  // Generate a random shuffle of the current filtered cards
+  const generateShuffledQueue = useCallback(
+    (cardsToShuffle: FlashcardData[]) => {
+      const shuffled = [...cardsToShuffle];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled.map((c) => c.id);
+    },
+    [],
+  );
+
+  // Initialize shuffle queue from current filteredDueCards
+  const initializeShuffle = useCallback(() => {
+    if (shuffleEnabled) {
+      setShuffledCardIds(generateShuffledQueue(filteredDueCards));
+    } else {
+      setShuffledCardIds([]);
+    }
+  }, [shuffleEnabled, filteredDueCards, generateShuffledQueue]);
+
+  // When shuffle is toggled on/off, initialize or clear queue
+  useEffect(() => {
+    initializeShuffle();
+  }, [initializeShuffle]);
+
+  // When categories change and shuffle is on, refresh the queue
+  useEffect(() => {
+    if (shuffleEnabled) {
+      initializeShuffle();
+    }
+  }, [selectedCategories, shuffleEnabled, initializeShuffle]);
+
+  const currentCard = useMemo(() => {
+    if (shuffleEnabled) {
+      const id = shuffledCardIds[0];
+      return cards.find((c) => c.id === id) || null;
+    } else {
+      return filteredDueCards[0] || null;
+    }
+  }, [shuffleEnabled, shuffledCardIds, cards, filteredDueCards]);
+
   const isListeningMode = mode === "LISTENING";
 
   const speak = useCallback((text: string) => {
@@ -157,12 +195,17 @@ export default function App() {
         return [...updated];
       });
 
+      if (shuffleEnabled) {
+        // Remove the current card from the shuffled queue
+        setShuffledCardIds((prev) => prev.slice(1));
+      }
+
       setIsFlipped(false);
       setShowHint(false);
       setTypedAnswer("");
       setAnswerFeedback(null);
     },
-    [currentCard],
+    [currentCard, shuffleEnabled],
   );
 
   const isKoPrompt = useMemo(() => {
@@ -279,6 +322,16 @@ export default function App() {
     setAnswerFeedback(null);
   }, []);
 
+  const toggleShuffle = useCallback(() => {
+    setShuffleEnabled((prev) => !prev);
+  }, []);
+
+  const reshuffle = useCallback(() => {
+    if (shuffleEnabled) {
+      initializeShuffle();
+    }
+  }, [shuffleEnabled, initializeShuffle]);
+
   if (cards.length === 0) {
     return (
       <div className="h-screen flex items-center justify-center bg-[#F8F9FA]">
@@ -290,6 +343,13 @@ export default function App() {
       </div>
     );
   }
+
+  const noCardsMessage =
+    shuffleEnabled && shuffledCardIds.length === 0
+      ? "No cards left in shuffle queue. Reshuffle or turn off shuffle."
+      : filteredDueCards.length === 0
+        ? "No cards in this category"
+        : null;
 
   return (
     <div className="h-screen bg-[#F8F9FA] flex overflow-hidden select-none">
@@ -380,35 +440,37 @@ export default function App() {
               <button
                 key={m}
                 onClick={() => setMode(m)}
-                className={`transition-colors hover:text-gray-800 ${mode === m ? "text-gray-900 border-b border-gray-900" : ""}`}
+                className={`transition-colors hover:text-gray-800 ${
+                  mode === m ? "text-gray-900 border-b border-gray-900" : ""
+                }`}
               >
                 {m.replace(/_/g, " ")}
               </button>
             ),
           )}
+        </div>
 
+        <div className="absolute top-5 right-4 flex items-center gap-2 z-10">
           <button
-            onClick={() => {
-              setIsShuffled(true);
-              setShuffleSeed(Date.now());
-            }}
-            title="Shuffle cards"
-            className={`ml-1 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 transition-all ${
-              isShuffled
-                ? "border-blue-200 bg-blue-50 text-blue-700"
-                : "border-gray-200 bg-white/70 text-gray-500 hover:text-gray-700"
+            onClick={toggleShuffle}
+            className={`flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors ${
+              shuffleEnabled
+                ? "border-purple-300 bg-purple-50 text-purple-700"
+                : "border-gray-200 bg-white text-gray-600 hover:border-gray-300"
             }`}
+            title={shuffleEnabled ? "Shuffle mode on" : "Shuffle mode off"}
           >
-            <Shuffle size={12} className={isShuffled ? "animate-pulse" : ""} />
-            <span>{isShuffled ? "Reshuffle" : "Shuffle"}</span>
+            <Shuffle size={14} />
+            <span className="hidden sm:inline">Shuffle</span>
           </button>
-
-          {isShuffled && (
+          {shuffleEnabled && (
             <button
-              onClick={() => setIsShuffled(false)}
-              className="text-[10px] text-gray-500 hover:text-gray-700 transition-colors"
+              onClick={reshuffle}
+              className="flex items-center gap-1 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-gray-600 transition-colors hover:border-gray-300"
+              title="Reshuffle deck"
             >
-              Due order
+              <RotateCcw size={14} />
+              <span className="hidden sm:inline">Reshuffle</span>
             </button>
           )}
         </div>
@@ -417,7 +479,11 @@ export default function App() {
           {currentCard ? (
             <AnimatePresence mode="wait">
               <motion.div
-                key={currentCard.id + (isFlipped ? "back" : "front")}
+                key={
+                  currentCard.id +
+                  (isFlipped ? "back" : "front") +
+                  shuffleEnabled
+                }
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -602,14 +668,32 @@ export default function App() {
           ) : (
             <div className="h-full rounded-3xl border border-dashed border-gray-300 bg-white/60 flex flex-col items-center justify-center px-6 text-center card-shadow">
               <p className="text-sm uppercase tracking-widest text-gray-400">
-                No cards in this category
+                {noCardsMessage || "No cards in this category"}
               </p>
-              <button
-                onClick={() => selectCategory("All")}
-                className="mt-3 text-sm text-blue-600 hover:underline"
-              >
-                Show all categories
-              </button>
+              {shuffleEnabled && shuffledCardIds.length === 0 && (
+                <div className="mt-3 flex gap-3">
+                  <button
+                    onClick={reshuffle}
+                    className="rounded-full bg-purple-50 px-4 py-1.5 text-xs font-semibold text-purple-700 hover:bg-purple-100"
+                  >
+                    Reshuffle
+                  </button>
+                  <button
+                    onClick={toggleShuffle}
+                    className="rounded-full bg-gray-100 px-4 py-1.5 text-xs font-semibold text-gray-700 hover:bg-gray-200"
+                  >
+                    Turn off shuffle
+                  </button>
+                </div>
+              )}
+              {!shuffleEnabled && filteredDueCards.length === 0 && (
+                <button
+                  onClick={() => selectCategory("All")}
+                  className="mt-3 text-sm text-blue-600 hover:underline"
+                >
+                  Show all categories
+                </button>
+              )}
             </div>
           )}
         </div>
