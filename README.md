@@ -1,20 +1,17 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Korean Flashcards
 
-# Run and deploy your AI Studio app
+## Deploy to GitHub Pages (GitHub Actions)
 
-This contains everything you need to run your app locally.
+This repo includes a workflow at `.github/workflows/deploy.yml` that builds and deploys `dist` to GitHub Pages.
 
-View your app in AI Studio: https://ai.studio/apps/ecb5ae3e-5154-433d-a2a7-515249a33e1d
+1. Push this project to GitHub.
+2. In GitHub, open **Settings > Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. (Optional, if your app needs Gemini access) add a repository secret named `GEMINI_API_KEY` in **Settings > Secrets and variables > Actions**.
+5. Push to `main` (or `master`) to trigger deployment.
 
-## Run Locally
+### Notes
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- The Vite base path is set automatically during GitHub Actions builds using your repository name.
+- You can override the base path at build time with `VITE_BASE_PATH` if needed.
+- This is a client-side app. Any API key available in browser code can be inspected by users.
