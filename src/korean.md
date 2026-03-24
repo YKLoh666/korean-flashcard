@@ -98,13 +98,14 @@
 | Student        | 학생   | haksaeng       | 學生   |
 | Housewife      | 주부   | jubu           | 主婦   |
 | Singer         | 가수   | gasu           | 歌手   |
+| Artist         | 화가   | hwaga          | 畫家   |
 | Actor          | 배우   | baeu           | 俳優   |
 | Police officer | 경찰관 | gyeongchalgwan | 警察官 |
 | Office worker  | 회사원 | hoesawon       | 會社員 |
 | Company        | 회사   | hoesa          | 會社   |
 | School         | 학교   | hakgyo         | 學校   |
 | Classroom      | 교실   | gyosil         | 教室   |
-| Bookstore      | 서점   | seojum         | 書店   |
+| Bookstore      | 서점   | seojeom        | 書店   |
 | Library        | 도서관 | doseogwan      | 圖書館 |
 | Hospital       | 병원   | byeongwon      | 病院   |
 | Embassy        | 대사관 | daesagwan      | 大使館 |
