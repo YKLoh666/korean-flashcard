@@ -1102,6 +1102,26 @@ export const INITIAL_CARDS: FlashcardData[] = [
   {
     id: "occupations-and-workplaces-12",
     category: "Occupations and Workplaces",
+    front_ko: "기자",
+    front_en: "Reporter",
+    romanization: "gija",
+    hanja: "記者",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "기자 예문",
+      en: "Example with Reporter"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "workplaces-1",
+    category: "Workplaces",
     front_ko: "회사",
     front_en: "Company",
     romanization: "hoesa",
@@ -1120,8 +1140,8 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "occupations-and-workplaces-13",
-    category: "Occupations and Workplaces",
+    id: "workplaces-2",
+    category: "Workplaces",
     front_ko: "학교",
     front_en: "School",
     romanization: "hakgyo",
@@ -1140,8 +1160,8 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "occupations-and-workplaces-14",
-    category: "Occupations and Workplaces",
+    id: "workplaces-3",
+    category: "Workplaces",
     front_ko: "교실",
     front_en: "Classroom",
     romanization: "gyosil",
@@ -1160,8 +1180,8 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "occupations-and-workplaces-15",
-    category: "Occupations and Workplaces",
+    id: "workplaces-4",
+    category: "Workplaces",
     front_ko: "서점",
     front_en: "Bookstore",
     romanization: "seojeom",
@@ -1180,8 +1200,8 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "occupations-and-workplaces-16",
-    category: "Occupations and Workplaces",
+    id: "workplaces-5",
+    category: "Workplaces",
     front_ko: "도서관",
     front_en: "Library",
     romanization: "doseogwan",
@@ -1200,8 +1220,8 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "occupations-and-workplaces-17",
-    category: "Occupations and Workplaces",
+    id: "workplaces-6",
+    category: "Workplaces",
     front_ko: "병원",
     front_en: "Hospital",
     romanization: "byeongwon",
@@ -1220,8 +1240,8 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "occupations-and-workplaces-18",
-    category: "Occupations and Workplaces",
+    id: "workplaces-7",
+    category: "Workplaces",
     front_ko: "대사관",
     front_en: "Embassy",
     romanization: "daesagwan",
