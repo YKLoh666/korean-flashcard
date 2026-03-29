@@ -1573,6 +1573,299 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
+    id: "daily-objects-18",
+    category: "Daily Objects",
+    front_ko: "우산",
+    front_en: "Umbrella",
+    romanization: "usan",
+    hanja: "雨傘",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "우산 예문",
+      en: "Example with Umbrella"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-19",
+    category: "Daily Objects",
+    front_ko: "잡지",
+    front_en: "Magazine",
+    romanization: "japji",
+    hanja: "雜誌",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "잡지 예문",
+      en: "Example with Magazine"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-20",
+    category: "Daily Objects",
+    front_ko: "공책",
+    front_en: "Exercise book",
+    romanization: "gongchaek",
+    hanja: "空冊",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "공책 예문",
+      en: "Example with Exercise book"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-21",
+    category: "Daily Objects",
+    front_ko: "사진",
+    front_en: "Photo",
+    romanization: "sajin",
+    hanja: "写真",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "사진 예문",
+      en: "Example with Photo"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-22",
+    category: "Daily Objects",
+    front_ko: "카드",
+    front_en: "Card",
+    romanization: "kadeu",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "카드 예문",
+      en: "Example with Card"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-23",
+    category: "Daily Objects",
+    front_ko: "치마",
+    front_en: "Skirt",
+    romanization: "chima",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "치마 예문",
+      en: "Example with Skirt"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-24",
+    category: "Daily Objects",
+    front_ko: "원피스",
+    front_en: "One-piece",
+    romanization: "wonpiseu",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "원피스 예문",
+      en: "Example with One-piece"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-25",
+    category: "Daily Objects",
+    front_ko: "바지",
+    front_en: "Pants",
+    romanization: "baji",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "바지 예문",
+      en: "Example with Pants"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-26",
+    category: "Daily Objects",
+    front_ko: "티셔츠",
+    front_en: "T-shirt",
+    romanization: "tisyeocheu",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "티셔츠 예문",
+      en: "Example with T-shirt"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-27",
+    category: "Daily Objects",
+    front_ko: "구두",
+    front_en: "Shoes",
+    romanization: "gudu",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "구두를 신어요.",
+      en: "I wear shoes."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-28",
+    category: "Daily Objects",
+    front_ko: "운동화",
+    front_en: "Sport shoes",
+    romanization: "undonghwa",
+    hanja: "運動靴",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "운동화 예문",
+      en: "Example with Sport shoes"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-29",
+    category: "Daily Objects",
+    front_ko: "신발",
+    front_en: "Slippers",
+    romanization: "sinbal",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "신발 예문",
+      en: "Example with Slippers"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-30",
+    category: "Daily Objects",
+    front_ko: "양말",
+    front_en: "Socks",
+    romanization: "yangmal",
+    hanja: "洋襪",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "양말 예문",
+      en: "Example with Socks"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-31",
+    category: "Daily Objects",
+    front_ko: "자전거",
+    front_en: "Bicycle",
+    romanization: "jajeongeo",
+    hanja: "自轉車",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "자전거 예문",
+      en: "Example with Bicycle"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "daily-objects-32",
+    category: "Daily Objects",
+    front_ko: "자동차",
+    front_en: "Car",
+    romanization: "jadongcha",
+    hanja: "自動車",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "자동차 예문",
+      en: "Example with Car"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
     id: "food-and-drinks-1",
     category: "Food and Drinks",
     front_ko: "음식",
@@ -1683,6 +1976,83 @@ export const INITIAL_CARDS: FlashcardData[] = [
     example: {
       ko: "사이다를 마셔요.",
       en: "I drink cider."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "food-and-drinks-7",
+    category: "Food and Drinks",
+    front_ko: "콜라",
+    front_en: "Cola",
+    romanization: "kolla",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "콜라 예문",
+      en: "Example with Cola"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "food-and-drinks-8",
+    category: "Food and Drinks",
+    front_ko: "물",
+    front_en: "Water",
+    romanization: "mul",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "물 예문",
+      en: "Example with Water"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "food-and-drinks-9",
+    category: "Food and Drinks",
+    front_ko: "와인",
+    front_en: "Wine",
+    romanization: "wain",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "와인 예문",
+      en: "Example with Wine"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "food-and-drinks-10",
+    category: "Food and Drinks",
+    front_ko: "차",
+    front_en: "Tea",
+    romanization: "cha",
+    hanja: "茶",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "차 예문",
+      en: "Example with Tea"
     },
     interval: 0,
     ease: 2.5,
@@ -2933,6 +3303,180 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
+    id: "animal-1",
+    category: "Animal",
+    front_ko: "동물",
+    front_en: "Animal",
+    romanization: "dongmul",
+    hanja: "動物",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "동물을 좋아해요.",
+      en: "I like animals."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "animal-2",
+    category: "Animal",
+    front_ko: "고양이",
+    front_en: "Cat",
+    romanization: "goyangi",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "고양이 예문",
+      en: "Example with Cat"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "animal-3",
+    category: "Animal",
+    front_ko: "말",
+    front_en: "Horse",
+    romanization: "mal",
+    hanja: "马",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "말 예문",
+      en: "Example with Horse"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "animal-4",
+    category: "Animal",
+    front_ko: "토끼",
+    front_en: "Rabbit",
+    romanization: "tokki",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "토끼 예문",
+      en: "Example with Rabbit"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "flower-1",
+    category: "Flower",
+    front_ko: "꽃",
+    front_en: "Flower",
+    romanization: "kkot",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "꽃이 예뻐요.",
+      en: "The flower is pretty."
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "flower-2",
+    category: "Flower",
+    front_ko: "장미",
+    front_en: "Rose",
+    romanization: "jangmi",
+    hanja: "蔷薇",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "장미 예문",
+      en: "Example with Rose"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "flower-3",
+    category: "Flower",
+    front_ko: "해바라기",
+    front_en: "Sunflower",
+    romanization: "haebaragi",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "해바라기 예문",
+      en: "Example with Sunflower"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "flower-4",
+    category: "Flower",
+    front_ko: "튤립",
+    front_en: "Tulip",
+    romanization: "tyullip",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "튤립 예문",
+      en: "Example with Tulip"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
+    id: "flower-5",
+    category: "Flower",
+    front_ko: "카네이션",
+    front_en: "Carnation",
+    romanization: "kaneisyeon",
+    meta: {
+      type: CardType.Noun,
+      politeness: Politeness.None
+    },
+    example: {
+      ko: "카네이션 예문",
+      en: "Example with Carnation"
+    },
+    interval: 0,
+    ease: 2.5,
+    dueDate: now
+  },
+
+  {
     id: "counters-and-units-1",
     category: "Counters and Units",
     front_ko: "물건",
@@ -3095,26 +3639,6 @@ export const INITIAL_CARDS: FlashcardData[] = [
   {
     id: "counters-and-units-9",
     category: "Counters and Units",
-    front_ko: "동물",
-    front_en: "Animal",
-    romanization: "dongmul",
-    hanja: "動物",
-    meta: {
-      type: CardType.Noun,
-      politeness: Politeness.None
-    },
-    example: {
-      ko: "동물을 좋아해요.",
-      en: "I like animals."
-    },
-    interval: 0,
-    ease: 2.5,
-    dueDate: now
-  },
-
-  {
-    id: "counters-and-units-10",
-    category: "Counters and Units",
     front_ko: "마리",
     front_en: "Animal (Unit)",
     romanization: "mari",
@@ -3132,26 +3656,7 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "counters-and-units-11",
-    category: "Counters and Units",
-    front_ko: "꽃",
-    front_en: "Flower",
-    romanization: "kkot",
-    meta: {
-      type: CardType.Noun,
-      politeness: Politeness.None
-    },
-    example: {
-      ko: "꽃이 예뻐요.",
-      en: "The flower is pretty."
-    },
-    interval: 0,
-    ease: 2.5,
-    dueDate: now
-  },
-
-  {
-    id: "counters-and-units-12",
+    id: "counters-and-units-10",
     category: "Counters and Units",
     front_ko: "송이",
     front_en: "Flower (Unit)",
@@ -3170,7 +3675,7 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "counters-and-units-13",
+    id: "counters-and-units-11",
     category: "Counters and Units",
     front_ko: "옷",
     front_en: "Clothes",
@@ -3189,7 +3694,7 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "counters-and-units-14",
+    id: "counters-and-units-12",
     category: "Counters and Units",
     front_ko: "벌",
     front_en: "Clothes (Unit)",
@@ -3208,26 +3713,7 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "counters-and-units-15",
-    category: "Counters and Units",
-    front_ko: "구두",
-    front_en: "Shoe",
-    romanization: "gudu",
-    meta: {
-      type: CardType.Noun,
-      politeness: Politeness.None
-    },
-    example: {
-      ko: "구두를 신어요.",
-      en: "I wear shoes."
-    },
-    interval: 0,
-    ease: 2.5,
-    dueDate: now
-  },
-
-  {
-    id: "counters-and-units-16",
+    id: "counters-and-units-13",
     category: "Counters and Units",
     front_ko: "켤레",
     front_en: "Shoe (Unit)",
@@ -3246,7 +3732,7 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "counters-and-units-17",
+    id: "counters-and-units-14",
     category: "Counters and Units",
     front_ko: "대",
     front_en: "Computer (Unit)",
@@ -3266,7 +3752,7 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "counters-and-units-18",
+    id: "counters-and-units-15",
     category: "Counters and Units",
     front_ko: "컵",
     front_en: "Cup",
@@ -3285,7 +3771,7 @@ export const INITIAL_CARDS: FlashcardData[] = [
   },
 
   {
-    id: "counters-and-units-19",
+    id: "counters-and-units-16",
     category: "Counters and Units",
     front_ko: "잔",
     front_en: "Cup (Unit)",

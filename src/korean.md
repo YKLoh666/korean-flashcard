@@ -12,6 +12,8 @@
     - [Time and Days](#time-and-days)
     - [Korean Numbers](#korean-numbers)
     - [Sino Numbers](#sino-numbers)
+    - [Animal](#animal)
+    - [Flower](#flower)
     - [Counters and Units](#counters-and-units)
     - [Questions and Useful Words](#questions-and-useful-words)
     - [Month Names](#month-names)
@@ -131,6 +133,21 @@
 | Ballpen            | 볼펜     | bolpen       | -        |
 | Computer           | 컴퓨터   | keompyuteo   | -        |
 | Paper              | 종이     | jongi        | -        |
+| Umbrella           | 우산     | usan         | 雨傘     |
+| Magazine           | 잡지     | japji        | 雜誌     |
+| Exercise book      | 공책     | gongchaek    | 空冊     |
+| Photo              | 사진     | sajin        | 写真     |
+| Card               | 카드     | kadeu        | -        |
+| Skirt              | 치마     | chima        | -        |
+| One-piece          | 원피스   | wonpiseu     | -        |
+| Pants              | 바지     | baji         | -        |
+| T-shirt            | 티셔츠   | tisyeocheu   | -        |
+| Shoes              | 구두     | gudu         | -        |
+| Sport shoes        | 운동화   | undonghwa    | 運動靴   |
+| Slippers           | 신발     | sinbal       | -        |
+| Socks              | 양말     | yangmal      | 洋襪     |
+| Bicycle            | 자전거   | jajeongeo    | 自轉車   |
+| Car                | 자동차   | jadongcha    | 自動車   |
 
 ### Food and Drinks
 
@@ -142,6 +159,10 @@
 | Orange juice | 오렌지 주스 | orenji juseu | -       |
 | Coffee       | 커피        | keopi        | -       |
 | Cider        | 사이다      | saida        | -       |
+| Cola         | 콜라        | kolla        | -       |
+| Water        | 물          | mul          | -       |
+| Wine         | 와인        | wain         | -       |
+| Tea          | 차          | cha          | 茶      |
 
 ### Places and Locations
 
@@ -226,6 +247,26 @@
 | 1,000   | 천   | cheon        | 千   |
 | 10,000  | 만   | man          | 萬   |
 
+### Animal
+
+| English | 한글   | Romanization | 한자 |
+| ------- | ------ | ------------ | ---- |
+| Animal  | 동물   | dongmul      | 動物 |
+| Cat     | 고양이 | goyangi      | -    |
+| Horse   | 말     | mal          | 马   |
+| Rabbit  | 토끼   | tokki        | -    |
+
+### Flower
+
+| English   | 한글     | Romanization | 한자 |
+| --------- | -------- | ------------ | ---- |
+| Flower    | 꽃       | kkot         | -    |
+| Rose      | 장미     | jangmi       | 蔷薇 |
+| Sunflower | 해바라기 | haebaragi    | -    |
+| Tulip     | 튤립     | tyullip      | -    |
+| Carnation | 카네이션 | kaneisyeon   | -    |
+
+
 ### Counters and Units
 
 | English               | 한글 | Romanization | 한자 |
@@ -238,13 +279,10 @@
 | Book                  | 책   | chaek        | 冊   |
 | Book (Unit)           | 권   | gwon         | 卷   |
 | Sheet of Paper (Unit) | 장   | jang         | 張   |
-| Animal                | 동물 | dongmul      | 動物 |
 | Animal (Unit)         | 마리 | mari         | -    |
-| Flower                | 꽃   | kkot         | -    |
 | Flower (Unit)         | 송이 | songi        | -    |
 | Clothes               | 옷   | ot           | -    |
 | Clothes (Unit)        | 벌   | beol         | -    |
-| Shoe                  | 구두 | gudu         | -    |
 | Shoe (Unit)           | 켤레 | kyeolre      | -    |
 | Computer (Unit)       | 대   | dae          | 台   |
 | Cup                   | 컵   | keop         | -    |
