@@ -6,6 +6,7 @@
     - [People and Family](#people-and-family)
     - [Countries and Nationalities](#countries-and-nationalities)
     - [Occupations and Workplaces](#occupations-and-workplaces)
+    - [Workplaces](#workplaces)
     - [Daily Objects](#daily-objects)
     - [Food and Drinks](#food-and-drinks)
     - [Places and Locations](#places-and-locations)
@@ -104,13 +105,19 @@
 | Actor          | 배우   | baeu           | 俳優   |
 | Police officer | 경찰관 | gyeongchalgwan | 警察官 |
 | Office worker  | 회사원 | hoesawon       | 會社員 |
-| Company        | 회사   | hoesa          | 會社   |
-| School         | 학교   | hakgyo         | 學校   |
-| Classroom      | 교실   | gyosil         | 教室   |
-| Bookstore      | 서점   | seojeom        | 書店   |
-| Library        | 도서관 | doseogwan      | 圖書館 |
-| Hospital       | 병원   | byeongwon      | 病院   |
-| Embassy        | 대사관 | daesagwan      | 大使館 |
+| Reporter       | 기자   | gija           | 記者   |
+
+### Workplaces
+
+| English   | 한글   | Romanization | 한자   |
+| --------- | ------ | ------------ | ------ |
+| Company   | 회사   | hoesa        | 會社   |
+| School    | 학교   | hakgyo       | 學校   |
+| Classroom | 교실   | gyosil       | 教室   |
+| Bookstore | 서점   | seojeom      | 書店   |
+| Library   | 도서관 | doseogwan    | 圖書館 |
+| Hospital  | 병원   | byeongwon    | 病院   |
+| Embassy   | 대사관 | daesagwan    | 大使館 |
 
 ### Daily Objects
 
@@ -265,7 +272,6 @@
 | Sunflower | 해바라기 | haebaragi    | -    |
 | Tulip     | 튤립     | tyullip      | -    |
 | Carnation | 카네이션 | kaneisyeon   | -    |
-
 
 ### Counters and Units
 
